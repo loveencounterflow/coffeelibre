@@ -1,0 +1,392 @@
+
+# derived from
+# http,//www.unicode.org/Public/UNIDATA/Blocks.txt
+# Unicode v 6.2.0
+# Date, 2012-05-14, 22,42,00 GMT [KW, LI]
+
+###
+
+This module lists all known named ranges in all configured character sets (currently Unicode and the Jizura
+Character Set JZRCS).
+
+For both ease of notation on the one hand and ease of use on the other hand, the data structure is somewhat
+transformed before export.
+
+The notation below obeays the following rules:
+
+* in `mode.exports[ 'names-and-ranges-by-csg' ]`—aliased as `names_and_ranges_by_csg`, there is one list
+  of ranges registered under the Character Set Sigil (CSG) for each configured character set (that's `u`
+  for Unicode and `jzr` for the JZRCS).
+
+* each list of ranges has, in the notation below, one sublist containing, in this order, the respective
+  range name, the corresponding range sigil (RSG) (or `null` when no RSG has been assigned), and then the
+  first and the last CID (numerical codepoint) of the respective range.
+
+* All ranges must be non-overlapping, though there may be gaps between ranges.
+
+* All ranges must be arranged in ascending order, sorted by their first CIDs.
+
+Before export, the range entries are transformed from lists to objects; each entry object will get four
+keys: `range-name`, `rsg`, `first-cid`, `last-cid`. In this way, overhead in the below notation is reduced,
+and readability in the application enhanced.
+
+Notice that while strictly redundant, each range sigil is, by convention, required to start with the CSG and
+a hyphen, as in `u-latn-b` standing for Unicode range `Latin Extended-B`.
+
+
+###
+
+
+############################################################################################################
+@[ 'names-and-ranges-by-csg' ] = names_and_ranges_by_csg = {}
+
+
+#===========================================================================================================
+# UNICODE
+#-----------------------------------------------------------------------------------------------------------
+#                         CSG
+@[ 'names-and-ranges-by-csg' ][ 'u' ] = [
+  #.........................................................................................................
+  # range-name                                         rsg               first-cid   last-cid
+  #.........................................................................................................
+  [ 'Basic Latin',                                     'u-latn',               0x0,      0x7f,  ]
+  [ 'Latin-1 Supplement',                              'u-latn-1',            0x80,      0xff,  ]
+  [ 'Latin Extended-A',                                'u-latn-a',           0x100,     0x17f,  ]
+  [ 'Latin Extended-B',                                'u-latn-b',           0x180,     0x24f,  ]
+  [ 'IPA Extensions',                                  'u-ipa-x',            0x250,     0x2af,  ]
+  [ 'Spacing Modifier Letters',                        'u-sml',              0x2b0,     0x2ff,  ]
+  [ 'Combining Diacritical Marks',                     'u-cdm',              0x300,     0x36f,  ]
+  [ 'Greek and Coptic',                                'u-grek',             0x370,     0x3ff,  ]
+  [ 'Cyrillic',                                        'u-cyrl',             0x400,     0x4ff,  ]
+  [ 'Cyrillic Supplement',                             'u-cyrl-s',           0x500,     0x52f,  ]
+  [ 'Armenian',                                        null,                 0x530,     0x58f,  ]
+  [ 'Hebrew',                                          null,                 0x590,     0x5ff,  ]
+  [ 'Arabic',                                          'u-arab',             0x600,     0x6ff,  ]
+  [ 'Syriac',                                          null,                 0x700,     0x74f,  ]
+  [ 'Arabic Supplement',                               'u-arab-s',           0x750,     0x77f,  ]
+  [ 'Thaana',                                          null,                 0x780,     0x7bf,  ]
+  [ 'NKo',                                             null,                 0x7c0,     0x7ff,  ]
+  [ 'Samaritan',                                       null,                 0x800,     0x83f,  ]
+  [ 'Mandaic',                                         null,                 0x840,     0x85f,  ]
+  [ 'Arabic Extended-A',                               null,                 0x8a0,     0x8ff,  ]
+  [ 'Devanagari',                                      null,                 0x900,     0x97f,  ]
+  [ 'Bengali',                                         null,                 0x980,     0x9ff,  ]
+  [ 'Gurmukhi',                                        null,                 0xa00,     0xa7f,  ]
+  [ 'Gujarati',                                        null,                 0xa80,     0xaff,  ]
+  [ 'Oriya',                                           null,                 0xb00,     0xb7f,  ]
+  [ 'Tamil',                                           null,                 0xb80,     0xbff,  ]
+  [ 'Telugu',                                          null,                 0xc00,     0xc7f,  ]
+  [ 'Kannada',                                         null,                 0xc80,     0xcff,  ]
+  [ 'Malayalam',                                       null,                 0xd00,     0xd7f,  ]
+  [ 'Sinhala',                                         null,                 0xd80,     0xdff,  ]
+  [ 'Thai',                                            null,                 0xe00,     0xe7f,  ]
+  [ 'Lao',                                             null,                 0xe80,     0xeff,  ]
+  [ 'Tibetan',                                         null,                 0xf00,     0xfff,  ]
+  [ 'Myanmar',                                         null,                0x1000,    0x109f,  ]
+  [ 'Georgian',                                        null,                0x10a0,    0x10ff,  ]
+  [ 'Hangul Jamo',                                     'u-hang-jm',         0x1100,    0x11ff,  ]
+  [ 'Ethiopic',                                        null,                0x1200,    0x137f,  ]
+  [ 'Ethiopic Supplement',                             null,                0x1380,    0x139f,  ]
+  [ 'Cherokee',                                        null,                0x13a0,    0x13ff,  ]
+  [ 'Unified Canadian Aboriginal Syllabics',           null,                0x1400,    0x167f,  ]
+  [ 'Ogham',                                           null,                0x1680,    0x169f,  ]
+  [ 'Runic',                                           null,                0x16a0,    0x16ff,  ]
+  [ 'Tagalog',                                         null,                0x1700,    0x171f,  ]
+  [ 'Hanunoo',                                         null,                0x1720,    0x173f,  ]
+  [ 'Buhid',                                           null,                0x1740,    0x175f,  ]
+  [ 'Tagbanwa',                                        null,                0x1760,    0x177f,  ]
+  [ 'Khmer',                                           null,                0x1780,    0x17ff,  ]
+  [ 'Mongolian',                                       null,                0x1800,    0x18af,  ]
+  [ 'Unified Canadian Aboriginal Syllabics Extended',  null,                0x18b0,    0x18ff,  ]
+  [ 'Limbu',                                           null,                0x1900,    0x194f,  ]
+  [ 'Tai Le',                                          null,                0x1950,    0x197f,  ]
+  [ 'New Tai Lue',                                     null,                0x1980,    0x19df,  ]
+  [ 'Khmer Symbols',                                   null,                0x19e0,    0x19ff,  ]
+  [ 'Buginese',                                        null,                0x1a00,    0x1a1f,  ]
+  [ 'Tai Tham',                                        null,                0x1a20,    0x1aaf,  ]
+  [ 'Balinese',                                        null,                0x1b00,    0x1b7f,  ]
+  [ 'Sundanese',                                       null,                0x1b80,    0x1bbf,  ]
+  [ 'Batak',                                           null,                0x1bc0,    0x1bff,  ]
+  [ 'Lepcha',                                          null,                0x1c00,    0x1c4f,  ]
+  [ 'Ol Chiki',                                        'u-olck',            0x1c50,    0x1c7f,  ]
+  [ 'Sundanese Supplement',                            null,                0x1cc0,    0x1ccf,  ]
+  [ 'Vedic Extensions',                                null,                0x1cd0,    0x1cff,  ]
+  [ 'Phonetic Extensions',                             'u-phon-x',          0x1d00,    0x1d7f,  ]
+  [ 'Phonetic Extensions Supplement',                  'u-phon-xs',         0x1d80,    0x1dbf,  ]
+  [ 'Combining Diacritical Marks Supplement',          'u-cdm-s',           0x1dc0,    0x1dff,  ]
+  [ 'Latin Extended Additional',                       'u-latn-xa',         0x1e00,    0x1eff,  ]
+  [ 'Greek Extended',                                  'u-grek-x',          0x1f00,    0x1fff,  ]
+  [ 'General Punctuation',                             'u-punct',           0x2000,    0x206f,  ]
+  [ 'Superscripts and Subscripts',                     'u-supsub',          0x2070,    0x209f,  ]
+  [ 'Currency Symbols',                                'u-currn',           0x20a0,    0x20cf,  ]
+  [ 'Combining Diacritical Marks for Symbols',         'u-cdm-sy',          0x20d0,    0x20ff,  ]
+  [ 'Letterlike Symbols',                              'u-llsym',           0x2100,    0x214f,  ]
+  [ 'Number Forms',                                    'u-num',             0x2150,    0x218f,  ]
+  [ 'Arrows',                                          'u-arrow',           0x2190,    0x21ff,  ]
+  [ 'Mathematical Operators',                          null,                0x2200,    0x22ff,  ]
+  [ 'Miscellaneous Technical',                         null,                0x2300,    0x23ff,  ]
+  [ 'Control Pictures',                                'u-ctrlp',           0x2400,    0x243f,  ]
+  [ 'Optical Character Recognition',                   'u-ocr',             0x2440,    0x245f,  ]
+  [ 'Enclosed Alphanumerics',                          'u-enalp',           0x2460,    0x24ff,  ]
+  [ 'Box Drawing',                                     'u-boxdr',           0x2500,    0x257f,  ]
+  [ 'Block Elements',                                  'u-block',           0x2580,    0x259f,  ]
+  [ 'Geometric Shapes',                                'u-geoms',           0x25a0,    0x25ff,  ]
+  [ 'Miscellaneous Symbols',                           'u-sym',             0x2600,    0x26ff,  ]
+  [ 'Dingbats',                                        'u-dingb',           0x2700,    0x27bf,  ]
+  [ 'Miscellaneous Mathematical Symbols-A',            'u-maths-a',         0x27c0,    0x27ef,  ]
+  [ 'Supplemental Arrows-A',                           'u-arrow-a',         0x27f0,    0x27ff,  ]
+  [ 'Braille Patterns',                                'u-brail',           0x2800,    0x28ff,  ]
+  [ 'Supplemental Arrows-B',                           'u-arrow-b',         0x2900,    0x297f,  ]
+  [ 'Miscellaneous Mathematical Symbols-B',            null,                0x2980,    0x29ff,  ]
+  [ 'Supplemental Mathematical Operators',             null,                0x2a00,    0x2aff,  ]
+  [ 'Miscellaneous Symbols and Arrows',                null,                0x2b00,    0x2bff,  ]
+  [ 'Glagolitic',                                      null,                0x2c00,    0x2c5f,  ]
+  [ 'Latin Extended-C',                                'u-latn-c',          0x2c60,    0x2c7f,  ]
+  [ 'Coptic',                                          null,                0x2c80,    0x2cff,  ]
+  [ 'Georgian Supplement',                             null,                0x2d00,    0x2d2f,  ]
+  [ 'Tifinagh',                                        null,                0x2d30,    0x2d7f,  ]
+  [ 'Ethiopic Extended',                               null,                0x2d80,    0x2ddf,  ]
+  [ 'Cyrillic Extended-A',                             'u-cyrl-a',          0x2de0,    0x2dff,  ]
+  [ 'Supplemental Punctuation',                        'u-punct-s',         0x2e00,    0x2e7f,  ]
+  [ 'CJK Radicals Supplement',                         'u-cjk-rad2',        0x2e80,    0x2eff,  ]
+  [ 'Kangxi Radicals',                                 'u-cjk-rad1',        0x2f00,    0x2fdf,  ]
+  [ 'Ideographic Description Characters',              'u-cjk-idc',         0x2ff0,    0x2fff,  ]
+  [ 'CJK Symbols and Punctuation',                     'u-cjk-sym',         0x3000,    0x303f,  ]
+  [ 'Hiragana',                                        'u-cjk-hira',        0x3040,    0x309f,  ]
+  [ 'Katakana',                                        'u-cjk-kata',        0x30a0,    0x30ff,  ]
+  [ 'Bopomofo',                                        'u-bopo',            0x3100,    0x312f,  ]
+  [ 'Hangul Compatibility Jamo',                       'u-hang-comp-jm',    0x3130,    0x318f,  ]
+  [ 'Kanbun',                                          'u-cjk-kanbun',      0x3190,    0x319f,  ]
+  [ 'Bopomofo Extended',                               'u-bopo-x',          0x31a0,    0x31bf,  ]
+  [ 'CJK Strokes',                                     'u-cjk-strk',        0x31c0,    0x31ef,  ]
+  [ 'Katakana Phonetic Extensions',                    'u-cjk-kata-x',      0x31f0,    0x31ff,  ]
+  [ 'Enclosed CJK Letters and Months',                 'u-cjk-enclett',     0x3200,    0x32ff,  ]
+  [ 'CJK Compatibility',                               'u-cjk-cmp',         0x3300,    0x33ff,  ]
+  [ 'CJK Unified Ideographs Extension A',              'u-cjk-xa',          0x3400,    0x4dbf,  ]
+  [ 'Yijing Hexagram Symbols',                         'u-yijng',           0x4dc0,    0x4dff,  ]
+  [ 'CJK Unified Ideographs',                          'u-cjk',             0x4e00,    0x9fff,  ]
+  [ 'Yi Syllables',                                    null,                0xa000,    0xa48f,  ]
+  [ 'Yi Radicals',                                     null,                0xa490,    0xa4cf,  ]
+  [ 'Lisu',                                            null,                0xa4d0,    0xa4ff,  ]
+  [ 'Vai',                                             null,                0xa500,    0xa63f,  ]
+  [ 'Cyrillic Extended-B',                             'u-cyrl-b',          0xa640,    0xa69f,  ]
+  [ 'Bamum',                                           null,                0xa6a0,    0xa6ff,  ]
+  [ 'Modifier Tone Letters',                           null,                0xa700,    0xa71f,  ]
+  [ 'Latin Extended-D',                                'u-latn-d',          0xa720,    0xa7ff,  ]
+  [ 'Syloti Nagri',                                    null,                0xa800,    0xa82f,  ]
+  [ 'Common Indic Number Forms',                       null,                0xa830,    0xa83f,  ]
+  [ 'Phags-pa',                                        null,                0xa840,    0xa87f,  ]
+  [ 'Saurashtra',                                      null,                0xa880,    0xa8df,  ]
+  [ 'Devanagari Extended',                             null,                0xa8e0,    0xa8ff,  ]
+  [ 'Kayah Li',                                        null,                0xa900,    0xa92f,  ]
+  [ 'Rejang',                                          null,                0xa930,    0xa95f,  ]
+  [ 'Hangul Jamo Extended-A',                          null,                0xa960,    0xa97f,  ]
+  [ 'Javanese',                                        null,                0xa980,    0xa9df,  ]
+  [ 'Cham',                                            null,                0xaa00,    0xaa5f,  ]
+  [ 'Myanmar Extended-A',                              null,                0xaa60,    0xaa7f,  ]
+  [ 'Tai Viet',                                        null,                0xaa80,    0xaadf,  ]
+  [ 'Meetei Mayek Extensions',                         null,                0xaae0,    0xaaff,  ]
+  [ 'Ethiopic Extended-A',                             null,                0xab00,    0xab2f,  ]
+  [ 'Meetei Mayek',                                    null,                0xabc0,    0xabff,  ]
+  [ 'Hangul Syllables',                                'u-hang-syl',        0xac00,    0xd7af,  ]
+  [ 'Hangul Jamo Extended-B',                          null,                0xd7b0,    0xd7ff,  ]
+  [ 'High Surrogates',                                 null,                0xd800,    0xdb7f,  ]
+  [ 'High Private Use Surrogates',                     null,                0xdb80,    0xdbff,  ]
+  [ 'Low Surrogates',                                  null,                0xdc00,    0xdfff,  ]
+  [ 'Private Use Area',                                'u-pua',             0xe000,    0xf8ff,  ]
+  [ 'CJK Compatibility Ideographs',                    'u-cjk-cmpi1',       0xf900,    0xfaff,  ]
+  [ 'Alphabetic Presentation Forms',                   'u-abc-pf',          0xfb00,    0xfb4f,  ]
+  [ 'Arabic Presentation Forms-A',                     'u-arab-pf-a',       0xfb50,    0xfdff,  ]
+  [ 'Variation Selectors',                             'u-varsl',           0xfe00,    0xfe0f,  ]
+  [ 'Vertical Forms',                                  'u-vertf',           0xfe10,    0xfe1f,  ]
+  [ 'Combining Half Marks',                            null,                0xfe20,    0xfe2f,  ]
+  [ 'CJK Compatibility Forms',                         'u-cjk-cmpf',        0xfe30,    0xfe4f,  ]
+  [ 'Small Form Variants',                             'u-small',           0xfe50,    0xfe6f,  ]
+  [ 'Arabic Presentation Forms-B',                     'u-arab-pf-b',       0xfe70,    0xfeff,  ]
+  [ 'Halfwidth and Fullwidth Forms',                   'u-halfull',         0xff00,    0xffef,  ]
+  [ 'Specials',                                        'u-special',         0xfff0,    0xffff,  ]
+  [ 'Linear B Syllabary',                              null,               0x10000,   0x1007f,  ]
+  [ 'Linear B Ideograms',                              null,               0x10080,   0x100ff,  ]
+  [ 'Aegean Numbers',                                  null,               0x10100,   0x1013f,  ]
+  [ 'Ancient Greek Numbers',                           null,               0x10140,   0x1018f,  ]
+  [ 'Ancient Symbols',                                 null,               0x10190,   0x101cf,  ]
+  [ 'Phaistos Disc',                                   null,               0x101d0,   0x101ff,  ]
+  [ 'Lycian',                                          null,               0x10280,   0x1029f,  ]
+  [ 'Carian',                                          null,               0x102a0,   0x102df,  ]
+  [ 'Old Italic',                                      null,               0x10300,   0x1032f,  ]
+  [ 'Gothic',                                          null,               0x10330,   0x1034f,  ]
+  [ 'Ugaritic',                                        null,               0x10380,   0x1039f,  ]
+  [ 'Old Persian',                                     null,               0x103a0,   0x103df,  ]
+  [ 'Deseret',                                         null,               0x10400,   0x1044f,  ]
+  [ 'Shavian',                                         null,               0x10450,   0x1047f,  ]
+  [ 'Osmanya',                                         null,               0x10480,   0x104af,  ]
+  [ 'Cypriot Syllabary',                               null,               0x10800,   0x1083f,  ]
+  [ 'Imperial Aramaic',                                null,               0x10840,   0x1085f,  ]
+  [ 'Phoenician',                                      null,               0x10900,   0x1091f,  ]
+  [ 'Lydian',                                          null,               0x10920,   0x1093f,  ]
+  [ 'Meroitic Hieroglyphs',                            null,               0x10980,   0x1099f,  ]
+  [ 'Meroitic Cursive',                                null,               0x109a0,   0x109ff,  ]
+  [ 'Kharoshthi',                                      null,               0x10a00,   0x10a5f,  ]
+  [ 'Old South Arabian',                               null,               0x10a60,   0x10a7f,  ]
+  [ 'Avestan',                                         null,               0x10b00,   0x10b3f,  ]
+  [ 'Inscriptional Parthian',                          null,               0x10b40,   0x10b5f,  ]
+  [ 'Inscriptional Pahlavi',                           null,               0x10b60,   0x10b7f,  ]
+  [ 'Old Turkic',                                      null,               0x10c00,   0x10c4f,  ]
+  [ 'Rumi Numeral Symbols',                            null,               0x10e60,   0x10e7f,  ]
+  [ 'Brahmi',                                          null,               0x11000,   0x1107f,  ]
+  [ 'Kaithi',                                          null,               0x11080,   0x110cf,  ]
+  [ 'Sora Sompeng',                                    null,               0x110d0,   0x110ff,  ]
+  [ 'Chakma',                                          null,               0x11100,   0x1114f,  ]
+  [ 'Sharada',                                         null,               0x11180,   0x111df,  ]
+  [ 'Takri',                                           null,               0x11680,   0x116cf,  ]
+  [ 'Cuneiform',                                       null,               0x12000,   0x123ff,  ]
+  [ 'Cuneiform Numbers and Punctuation',               null,               0x12400,   0x1247f,  ]
+  [ 'Egyptian Hieroglyphs',                            null,               0x13000,   0x1342f,  ]
+  [ 'Bamum Supplement',                                null,               0x16800,   0x16a3f,  ]
+  [ 'Miao',                                            null,               0x16f00,   0x16f9f,  ]
+  [ 'Kana Supplement',                                 null,               0x1b000,   0x1b0ff,  ]
+  [ 'Byzantine Musical Symbols',                       null,               0x1d000,   0x1d0ff,  ]
+  [ 'Musical Symbols',                                 null,               0x1d100,   0x1d1ff,  ]
+  [ 'Ancient Greek Musical Notation',                  null,               0x1d200,   0x1d24f,  ]
+  [ 'Tai Xuan Jing Symbols',                           'u-txj-sym',        0x1d300,   0x1d35f,  ]
+  [ 'Counting Rod Numerals',                           null,               0x1d360,   0x1d37f,  ]
+  [ 'Mathematical Alphanumeric Symbols',               null,               0x1d400,   0x1d7ff,  ]
+  [ 'Arabic Mathematical Alphabetic Symbols',          null,               0x1ee00,   0x1eeff,  ]
+  [ 'Mahjong Tiles',                                   null,               0x1f000,   0x1f02f,  ]
+  [ 'Domino Tiles',                                    null,               0x1f030,   0x1f09f,  ]
+  [ 'Playing Cards',                                   null,               0x1f0a0,   0x1f0ff,  ]
+  [ 'Enclosed Alphanumeric Supplement',                null,               0x1f100,   0x1f1ff,  ]
+  [ 'Enclosed Ideographic Supplement',                 'u-cjk-encsupp',    0x1f200,   0x1f2ff,  ]
+  [ 'Miscellaneous Symbols And Pictographs',           null,               0x1f300,   0x1f5ff,  ]
+  [ 'Emoticons',                                       null,               0x1f600,   0x1f64f,  ]
+  [ 'Transport And Map Symbols',                       null,               0x1f680,   0x1f6ff,  ]
+  [ 'Alchemical Symbols',                              null,               0x1f700,   0x1f77f,  ]
+  [ 'CJK Unified Ideographs Extension B',              'u-cjk-xb',         0x20000,   0x2a6df,  ]
+  [ 'CJK Unified Ideographs Extension C',              'u-cjk-xc',         0x2a700,   0x2b73f,  ]
+  [ 'CJK Unified Ideographs Extension D',              'u-cjk-xd',         0x2b740,   0x2b81f,  ]
+  [ 'CJK Compatibility Ideographs Supplement',         'u-cjk-cmpi2',      0x2f800,   0x2fa1f,  ]
+  [ 'Tags',                                            null,               0xe0000,   0xe007f,  ]
+  [ 'Variation Selectors Supplement',                  'u-varsl-s',        0xe0100,   0xe01ef,  ]
+  [ 'Supplementary Private Use Area-A',                null,               0xf0000,   0xfffff,  ]
+  [ 'Supplementary Private Use Area-B',                null,              0x100000,  0x10ffff,  ]
+  #.........................................................................................................
+  ]
+
+
+#===========================================================================================================
+# JIZURA
+#-----------------------------------------------------------------------------------------------------------
+#                         CSG
+@[ 'names-and-ranges-by-csg' ][ 'jzr' ] = [
+  #.........................................................................................................
+  # range-name                                         rsg               first-cid   last-cid
+  #.........................................................................................................
+  [ 'Jizura Character Components',                     'jzr-fig',           0xe000,    0xf8ff,  ]
+  #.........................................................................................................
+  ]
+
+
+#===========================================================================================================
+# OTHERS
+#-----------------------------------------------------------------------------------------------------------
+### wholesale addition of the character sets i'm encountering in my work: ###
+@[ 'names-and-ranges-by-csg' ][ 'aj'        ] = [ [ '(Glyphs)', 'aj',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'b'         ] = [ [ '(Glyphs)', 'b',         0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'c1'        ] = [ [ '(Glyphs)', 'c1',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'c2'        ] = [ [ '(Glyphs)', 'c2',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'c3'        ] = [ [ '(Glyphs)', 'c3',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'c4'        ] = [ [ '(Glyphs)', 'c4',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'c5'        ] = [ [ '(Glyphs)', 'c5',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'c6'        ] = [ [ '(Glyphs)', 'c6',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'c7'        ] = [ [ '(Glyphs)', 'c7',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'cb'        ] = [ [ '(Glyphs)', 'cb',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'cdp'       ] = [ [ '(Glyphs)', 'cdp',       0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'gt'        ] = [ [ '(Glyphs)', 'gt',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'gtk'       ] = [ [ '(Glyphs)', 'gtk',       0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hdib'      ] = [ [ '(Glyphs)', 'hdib',      0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hzk1'      ] = [ [ '(Glyphs)', 'hzk1',      0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hzk2'      ] = [ [ '(Glyphs)', 'hzk2',      0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hzk4'      ] = [ [ '(Glyphs)', 'hzk4',      0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hzk6'      ] = [ [ '(Glyphs)', 'hzk6',      0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hzk7'      ] = [ [ '(Glyphs)', 'hzk7',      0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hzk8'      ] = [ [ '(Glyphs)', 'hzk8',      0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hzk9'      ] = [ [ '(Glyphs)', 'hzk9',      0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'j83'       ] = [ [ '(Glyphs)', 'j83',       0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'j90'       ] = [ [ '(Glyphs)', 'j90',       0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'jsp'       ] = [ [ '(Glyphs)', 'jsp',       0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'jx1'       ] = [ [ '(Glyphs)', 'jx1',       0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'jx2'       ] = [ [ '(Glyphs)', 'jx2',       0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'jx3'       ] = [ [ '(Glyphs)', 'jx3',       0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'k0'        ] = [ [ '(Glyphs)', 'k0',        0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'mcs'       ] = [ [ '(Glyphs)', 'mcs',       0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'morohashi' ] = [ [ '(Glyphs)', 'morohashi', 0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hzk12'     ] = [ [ '(Glyphs)', 'hzk12',     0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hzk3'      ] = [ [ '(Glyphs)', 'hzk3',      0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'hzk3'      ] = [ [ '(Glyphs)', 'hzk3',      0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'jc3'       ] = [ [ '(Glyphs)', 'jc3',       0x0000, 0xffffffff, ] ]
+@[ 'names-and-ranges-by-csg' ][ 'rui6'      ] = [ [ '(Glyphs)', 'rui6',      0x0000, 0xffffffff, ] ]
+
+############################################################################################################
+# do =>
+#   for name_and_range in @names_and_ranges
+#     range_name  = name_and_range[ 0 ]
+#     rsg         = rsg_by_range_name[ range_name ]
+#     continue unless rsg?
+#     name_and_range[ 0 ] = [ range_name, rsg, ]
+
+# do =>
+#   for name_and_range in @[ 'names-and-ranges-by-csg' ][ 'u' ]
+#     range_name  = name_and_range[ 0 ]
+#     rsg         = rsg_by_range_name[ range_name ]
+#     rsg        ?= null
+#     name_and_range.splice 1, 0, rsg
+#     # name_and_range[ 0 ] = [ range_name, rsg, ]
+#   TRM                       = require 'coffeenode-trm'
+#   log                       = TRM.log.bind TRM
+#   rpr                       = TRM.rpr.bind TRM
+#   echo                      = TRM.echo.bind TRM
+#   Table = require 'easy-table'
+#   table = new Table
+#   pad = ( text ) -> return ( ( new Array 9 - text.length ).join ' ' ) + text
+#   for name_and_range in @[ 'names-and-ranges-by-csg' ][ 'u' ]
+#     [ range_name
+#       rsg
+#       first_cid
+#       last_cid ] = name_and_range
+#     first_cid_hex = pad '0x' + first_cid.toString 16
+#     last_cid_hex  = pad '0x' + last_cid.toString  16
+#     table.cell 'left',       '['
+#     table.cell 'range_name', (rpr range_name )+ ','
+#     table.cell 'rsg',        (rpr rsg) + ','
+#     table.cell 'first_cid',  first_cid_hex + ','
+#     table.cell 'last_cid',   last_cid_hex + ','
+#     table.cell 'right',      ']'
+#     table.newRow()
+#   echo table.toString()
+
+
+# TRM                       = require 'coffeenode-trm'
+
+
+############################################################################################################
+do =>
+  for csg, names_and_ranges of @[ 'names-and-ranges-by-csg' ]
+    # TRM.log csg
+    for name_and_range, idx in names_and_ranges
+      [ range_name
+        rsg
+        first_cid
+        last_cid ] = name_and_range
+      # TRM.log idx, names_and_ranges[ idx ]
+      names_and_ranges[ idx ] =
+        'range-name':   range_name
+        'rsg':          rsg
+        'first-cid':    first_cid
+        'last-cid':     last_cid
+
+
+# TRM.log @names_and_ranges_by_csg
+
+
+
+
