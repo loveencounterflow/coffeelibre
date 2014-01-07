@@ -3,14 +3,14 @@
 
 
 ############################################################################################################
-TYPES                     = require '/Volumes/Storage/temp/openoffice-intercom/coffeenode-types'
+TYPES                     = require 'coffeenode-types'
 # TRM                       = require 'coffeenode-trm'
 # rpr                       = TRM.rpr.bind TRM
 # log                       = TRM.log.bind TRM
 #...........................................................................................................
-character_sets_and_ranges = require '/Volumes/Storage/temp/openoffice-intercom/character-sets-and-ranges'
+character_sets_and_ranges = require 'character-sets-and-ranges'
 @_names_and_ranges_by_csg = character_sets_and_ranges[ 'names-and-ranges-by-csg' ]
-binary_interval_search    = require '/Volumes/Storage/temp/openoffice-intercom/binary-interval-search'
+binary_interval_search    = require 'binary-interval-search'
 
 
 

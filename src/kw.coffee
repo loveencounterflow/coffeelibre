@@ -761,6 +761,79 @@ show_objects = ->
   log 'ok'
 
 
+#-----------------------------------------------------------------------------------------------------------
+@f = ->
+  # service_names = service_manager.getAvailableServiceNames()
+  # for idx in [ 0 ... service_names.length ]
+  #   service_name = service_names[ idx ]
+  #   GLOBAL.print service_name if /^com\.sun\.star\.script/.test service_name
+  # GLOBAL.print service_names.length
+  # # script_provider = service_manager.createInstanceWithContext 'com.sun.star.script.provider.ScriptProviderForJavaScript', ctx
+  # script_provider = service_manager.createInstanceWithContext 'com.sun.star.script.provider.ScriptProviderForBasic', ctx
+  # path_settings = UnoRuntime.queryInterface XMultiPropertySet, path_settings
+  # TRM.dir 'path_settings', path_settings
+  # TRM.dir 'path_settings.getPropertySetInfo()', path_settings.getPropertySetInfo()
+  # TRM.dir 'path_settings.getPropertySetInfo().getProperties()', path_settings.getPropertySetInfo().getProperties()
+  # log '©45f', '' + path_settings.getPropertyValue 'Work'
+  # log '©45f', '' + path_settings.getPropertySetInfo().getProperties().length
+  # TRM.dir 'service_manager', service_manager
+
+  context           = XSCRIPTCONTEXT.getComponentContext()
+  service_manager   = context.getServiceManager()
+  path_settings     = service_manager.createInstanceWithContext 'com.sun.star.util.PathSettings', context
+  path_settings     = UnoRuntime.queryInterface XPropertySet, path_settings
+  #.........................................................................................................
+  # for property in path_settings.getPropertySetInfo().getProperties()
+  #   # TRM.dir 'property', property
+  #   name  = '' + property.Name
+  #   continue if /_internal$/.test name
+  #   continue if     /_user$/.test name
+  #   continue if /_writable$/.test name
+  #   routes = '' + path_settings.getPropertyValue name
+  #   routes = routes.split ';'
+  #   for route in routes
+  #     route = route.replace /^file:\/\//, ''
+  #     route = route.replace /%([0-9a-f]{2})/, ( $0, $1 ) -> return String.fromCharCode parseInt $1, 16
+  #     log "#{TEXT.flush_left name, 20} #{route}"
+  #.........................................................................................................
+  script_provider     = service_manager.createInstanceWithContext 'com.sun.star.script.provider.ScriptProviderForJavaScript', context
+  meta_data           = service_manager.createInstanceWithContext 'com.sun.star.script.framework.container.ScriptMetaData', context
+  script_uri_helper   = service_manager.createInstanceWithContext 'com.sun.star.script.provider.ScriptURIHelper', context
+  script_uri_helper   = UnoRuntime.queryInterface XScriptURIHelper, script_uri_helper
+  script_context      = script_provider.getScriptingContext()
+  invocation_context  = XSCRIPTCONTEXT.getInvocationContext()
+  TRM.dir 'XSCRIPTCONTEXT', XSCRIPTCONTEXT
+  script_container    = invocation_context.getScriptContainer()
+  script_container    = UnoRuntime.queryInterface XInvocation2, script_container
+  TRM.dir 'script_container', script_container
+  TRM.dir 'script_uri_helper', script_uri_helper
+  TRM.dir 'meta_data', meta_data
+  # invocation_context  = UnoRuntime.queryInterface XInvocation2, invocation_context
+  # TRM.dir 'invocation_context', invocation_context
+  # log 'script_uri_helper.rootStorageURI: ' + script_uri_helper.rootStorageURI
+  # log 'script_uri_helper.storageURI: ' + script_uri_helper.storageURI
+  # log 'getScriptURI:      ' + script_uri_helper.getScriptURI()
+  # log 'getStorageURI:     ' + script_uri_helper.getStorageURI()
+
+  # TRM.dir 'script_container', script_container
+  # log '' + script_provider.getScriptingContext()
+
+#-----------------------------------------------------------------------------------------------------------
+string_from_stream = ( stream, encoding = 'utf-8' ) ->
+  # R = []
+  # try
+  #   stream_reader = new StreamReader stream, 'UTF-8'
+  #   reader        = new BufferedReader    stream_reader
+  #   R.push line while ( line = reader.readLine() )?
+  # finally
+  #   reader.close() if reader?
+  # return R.join '\n'
+  return '' + stream.toString()
+my_out = new StringWriter()
+# my_out = new ByteArrayOutputStream( 1024 )
+log GLOBAL.runCommand 'ls', '/tmp', output: my_out
+log '©29f', string_from_stream my_out
+
 
 ############################################################################################################
 @main()

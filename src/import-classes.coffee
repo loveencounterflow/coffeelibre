@@ -1,25 +1,33 @@
 
 ############################################################################################################
+# importClass Packages.com.sun.star.drawing.ControlShape
+# importClass Packages.com.sun.star.drawing.XDrawPage
+# importClass Packages.com.sun.star.drawing.XShape
+# importClass Packages.com.sun.star.script.framework.container.ScriptMetaData
+# importClass Packages.com.sun.star.script.provider.MasterScriptProviderFactory
+# importClass Packages.com.sun.star.script.provider.ScriptProviderForBasic
+# importClass Packages.com.sun.star.script.provider.XScriptContext
+# importClass Packages.com.sun.star.script.provider.XScriptURIHelper
+# importClass Packages.com.sun.star.script.XInvocation
+# importClass Packages.com.sun.star.script.XInvocation2
+# importClass Packages.com.sun.star.script.XscriptInvocation # not implemented?
+importClass Packages.com.sun.star.beans.XMultiPropertySet
 importClass Packages.com.sun.star.beans.XPropertySet
 importClass Packages.com.sun.star.chart.XChartData
 importClass Packages.com.sun.star.container.XIndexAccess
 importClass Packages.com.sun.star.container.XNamed
 importClass Packages.com.sun.star.document.XUndoManager
 importClass Packages.com.sun.star.document.XUndoManagerSupplier
-# importClass Packages.com.sun.star.drawing.ControlShape
-# importClass Packages.com.sun.star.drawing.XShape
-# importClass Packages.com.sun.star.drawing.XDrawPage
 importClass Packages.com.sun.star.frame.XController
 importClass Packages.com.sun.star.frame.XModel
 importClass Packages.com.sun.star.lang.XServiceInfo
-# importClass Packages.com.sun.star.script.provider.MasterScriptProviderFactory
 importClass Packages.com.sun.star.script.provider.XScriptProvider
-# importClass Packages.com.sun.star.script.provider.ScriptProviderForBasic
 importClass Packages.com.sun.star.sheet.XCellRangeAddressable
 importClass Packages.com.sun.star.sheet.XSpreadsheet
 importClass Packages.com.sun.star.sheet.XSpreadsheetDocument
 importClass Packages.com.sun.star.sheet.XSpreadsheets
 importClass Packages.com.sun.star.sheet.XSpreadsheetView
+importClass Packages.com.sun.star.style.XStyleFamiliesSupplier
 importClass Packages.com.sun.star.table.CellHoriJustify
 importClass Packages.com.sun.star.table.CellVertJustify
 importClass Packages.com.sun.star.text.XText

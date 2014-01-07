@@ -128,6 +128,9 @@
   pv = UnoRuntime.queryInterface XPropertySet, cell
   # log options[ 'font-name' ]
   #.........................................................................................................
+  if ( value = options[ 'cell-style-name' ] )?
+    pv.setPropertyValue 'CellStyle',          value
+  #.........................................................................................................
   if ( value = options[ 'font-name' ] )?
     pv.setPropertyValue 'CharFontName',       value
     pv.setPropertyValue 'CharFontNameAsian',  value
@@ -156,6 +159,7 @@
     pv.setPropertyValue 'VertJustify', value
   #.........................................................................................................
   return null
+
 #-----------------------------------------------------------------------------------------------------------
 @range_ref_from_xy = ( xy0, xy1 ) ->
   return ( @cell_ref_from_xy xy0... ).concat ':', ( @cell_ref_from_xy xy1... )
