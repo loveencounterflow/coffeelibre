@@ -69,11 +69,18 @@ I managed to find ready-made macros written in Basic that made moving cells usin
 but i had no hope i could find prefab macros to do the formatting—i mean, who on earth writes macros to
 format characters in spreadsheet cells according to their respective Unicode code points? I already had
 implementations in Coffee/JavaScript to do exactly that, except for the part where i had to tell OpenOffice
-to apply the formatting. Since OpenOffice does boast support for JavaScript as macro languages, so i decided
-to give it a try.
+to apply the formatting. Since OpenOffice does have support for JavaScript, i decided to give it a try.
+
+I succeeded in so far as i managed to draw a tree and leave most of the formatting chores to a macro
+(rather, a family of methods deployed over several files). Here's a screenshot of the current result:
 
 ![result](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 20.31.51.png)
 
+Observe how tree lines are drawn in grey, and Chinese characters (and components) have blue backgrounds.
+What you cannot immediately see is that the Chinese stuff in this picture comes from three different
+fonts—characters identified with prefixes `u-cjk-` and `u-cjk-xa` use Sun-ExtA.ttf, those with `u-cjk-xb`
+use (a fork of) Sun-ExtB.ttf, and those marked with a `jzr-` use a font i produced with fontforge, as
+those glyphs are not encoded in Unicode (as of v6.3).
 
 ### How?
 
