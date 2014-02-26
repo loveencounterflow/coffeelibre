@@ -226,6 +226,10 @@ TYPES                     = require 'coffeenode-types'
 font_name_by_rsg          = require 'font-name-by-rsg'
 #...........................................................................................................
 CL                        = require 'coffeelibre'
+#...........................................................................................................
+log                       = TRM.log.bind TRM
+rpr                       = TRM.rpr.bind TRM
+xray                      = TRM.xray.bind TRM
 ````
 
 
