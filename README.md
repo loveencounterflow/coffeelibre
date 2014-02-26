@@ -108,7 +108,7 @@ is much higher, since the last significant changes to the code shown must have o
 ago, according to the Wiki's history page).
 
 Alas, elaborate as the code is, it won't work with OpenOffice Calc, only in Writer; also, there is a
-likelyhood that it will crash on OSX, since there is a log-standing bug that keeps macros from using
+likelyhood that it will crash on OSX, since there is a long-standing bug that keeps OOo macros from using
 Java AWT stuff (google `openoffice osx awt` for this one).
 
 There are a few points that merit your attention in these snippets:
@@ -120,8 +120,8 @@ There are a few points that merit your attention in these snippets:
   * `UnoRuntime`
   * `GLOBAL` (not shown here)
 
-  are not part of standard JavaScript. Why the OOo folks chose to distribute their custom facilities in no
-  less than four different objects i have no clue.
+  are not part of standard JavaScript (why the OOo folks chose to distribute their custom facilities in no
+    less than four different objects i have no clue).
 
 
 #### XXXXXXXXX
@@ -183,7 +183,9 @@ of free-and-easy programmers quite often. So why not abstract the bejeezes out o
 
 Basically, `XSCRIPTCONTEXT.getDocument()` gives you an object that represents *something* in a hand-waving
 non-committal fashion, and *nothing in particular* at the same time. To get more specific, we still have to
-'wrap' that `NotAnythingInParticular` blob with an interface. To quote from the docs (which are easily
+'wrap' that `NotAnythingInParticular` blob with an interface. As far as i understand it, this is a weak /
+obfuscated / helpless way of bringing a modicum of dynamism into that rigid beast that is Java—not unlike
+what people do when implementing, say, JavaScript in Java. To quote from the docs (which are easily
 retrievable from https://www.openoffice.org/api/docs/java/ref/com/sun/star/uno/UnoRuntime.html#queryInterface%28com.sun.star.uno.Type,%20java.lang.Object%29)
 
 > [`UnoRuntime.queryInterface`] returns null in case the given UNO object does not support the given UNO
@@ -192,7 +194,8 @@ retrievable from https://www.openoffice.org/api/docs/java/ref/com/sun/star/uno/U
 > unspecified whether the returned Java object is the same as the given object, or is another facet of
 > that UNO object.
 
-Anyone shouting 'JUST GIMME THAT DARN OBJECT ALREADY' at this point?
+Anyone feeling the urge to shout 'JUST GIMME THAT DARN OBJECT ALREADY' at this point?
+
 
 #### XXXXXXXXX
 
@@ -201,11 +204,13 @@ or may not work for scripting as described here), i chose to use
 `/Applications/OpenOffice.app/Contents/share/Scripts/javascript` as location to link a folder that
 contains my scripts—more specifically, you could simply
 
-    cd ~
-    git clone https://github.com/loveencounterflow/coffeelibre.git
-    cd /Applications/OpenOffice.app/Contents/share/Scripts/javascript
-    ln -s ~/coffeelibre CoffeeLibreDemo # or whatever name
-    cd -
+````bash
+cd ~
+git clone https://github.com/loveencounterflow/coffeelibre.git
+cd /Applications/OpenOffice.app/Contents/share/Scripts/javascript
+ln -s ~/coffeelibre CoffeeLibreDemo # or whatever name
+cd -
+````
 
 > Notice that on OSX, applications like OpenOffice are distributed as `*.app` bundles, which are really
 > directories that behave as files under many circumstances; you can still `cd` into an `*.app`, but Finder
