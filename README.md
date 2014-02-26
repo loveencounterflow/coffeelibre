@@ -119,6 +119,7 @@ There are a few points that merit your attention in these snippets:
   * `XSCRIPTCONTEXT`
   * `UnoRuntime`
   * `GLOBAL` (not shown here)
+
   are not part of standard JavaScript. Why the OOo folks chose to distribute their custom facilities in no
   less than four different objects i have no clue.
 
