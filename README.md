@@ -31,8 +31,8 @@ I quickly found what i always find after opening an OpenOffice application:
   menus, submenus, and subsubsubmenus**;
 * that new versions of it are **unlikely to come up with anything new**;
 * that it's quite **happy to crash** any given moment, and
-* that (especially Calc) is **incredibly stupid / stubborn / incapable of doing any meaningful / consistent
-  formatting** (with or without using named styles).
+* that (especially Calc) is **incredibly stupid / stubborn / incapable when it comes to doing any meaningful
+  / consistent formatting** (with or without using named styles).
 
 Lacking alternatives and wanting to get on with my idea, i looked into writing macros for my purpose. The
 thinking was that i needed several different fonts for the Chinese characters alone, as they are spread
@@ -198,6 +198,10 @@ Anyone feeling the urge to shout 'JUST GIMME THAT DARN OBJECT ALREADY' at this p
 
 
 #### XXXXXXXXX
+
+![a](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 15.48.58.png)
+
+![b](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.24.42.png)
 
 While there is (on OSX) a folder `~/Library/Application Support/OpenOffice/4/user/Scripts` (which may
 or may not work for scripting as described here), i chose to use
