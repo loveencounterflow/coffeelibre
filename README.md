@@ -165,7 +165,16 @@ of free-and-easy programmers quite often. So why not abstract the bejeezes out o
 > art by http://geek-and-poke.com/
 
 Basically, `XSCRIPTCONTEXT.getDocument()` gives you an object that represents *something* in a hand-waving
-non-committal fashion, and *nothing in particular* at the same time.
+non-committal fashion, and *nothing in particular* at the same time. To get more specific, we still have
+to 'wrap' that `NotAnythingInParticular` blob with an interface. To quote from the docs:
+
+> [`UnoRuntime.queryInterface`] returns null in case the given UNO object does not support the given UNO
+> interface type (or is itself null). Otherwise, a reference to a Java object implementing the Java
+> interface type corresponding to the given UNO interface is returned. In the latter case, it is
+> unspecified whether the returned Java object is the same as the given object, or is another facet of
+> that UNO object.
+
+
 
 #### XXXXXXXXX
 
