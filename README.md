@@ -1,9 +1,23 @@
-## coffeelibre
+
+## CoffeeLibre
 
 
 ### What?
 
+**CoffeeLibre is an attempt to bring easier scripting with CoffeeScript to OpenOffice (OOo).**
 
+OpenOffice macros suffer from a number of problems:
+
+* they are hard to access and maintain from within the OpenOffice GUI;
+* writing macros with one of the several script editors provided by OOo is an unpleasant experience at best;
+* writing OOo macros in JavaScript is possible, but results in incredibly convoluted code.
+
+You can achieve to remedy all of the above to a certain degree by
+
+* keeping source files out of the OOo directory (creating symbolic links instead);
+* authoring macros with your favorite text editor; and
+* wrapping up pieces of functionality—especially annoyingly long-winded OOo-API incantations—into
+  libraries (for which [src/coffeelibre.coffee](src/coffeelibre.coffee) may serve as an example).
 
 ### Why?
 
@@ -122,10 +136,8 @@ There are a few points that merit your attention in these snippets:
   * `importClass`
   * `XSCRIPTCONTEXT`
   * `UnoRuntime`
-  * `Global` (not shown here)
 
-  are not part of standard JavaScript (why the OOo folks chose to distribute their custom facilities in no
-    less than four different objects i have no clue).
+  are not part of standard JavaScript but so-called 'host objects'.
 
 
 #### XXXXXXXXX
@@ -251,7 +263,7 @@ NodeJS `require` keyword (which lands in the global namespace). We then proceed 
 Java classes that come under such delicious names as `com.sun.star.style.XStyleFamiliesSupplier` and
 `com.sun.star.script.provider.MasterScriptProviderFactory` (but, alas, no `AbstractSingletonProxyFactoryBean`).
 
-Next, we load some utility classes: `TRM` is a dumbed-down version of
+Next, we load some utility libraries: `TRM` is a dumbed-down version of
 [`coffeenode-trm`](https://github.com/loveencounterflow/coffeenode-trm) and provides TeRMinal printout
 methods, while `CHR`, `TEXT` and `TYPES` are copied without changes from
 [`coffeenode-chr`](https://github.com/loveencounterflow/coffeenode-chr),
@@ -270,7 +282,7 @@ e.g. our `GLOBAL` variable.
 OpenOffice not only provides multi-level undo, the undo functionality is also made available to scripts.
 Even better, multiple atomic actions can be grouped together so they appear as single steps in the undo
 actions lists. This means you can write complex macros that e.g. format lots and lots of cells in a
-spreadsheet and you can still undo the entire transaction with a single `⌘Z` (or `ctrl+z`). It's as easy
+spreadsheet and you can still undo the entire transaction with a single `⌘Z` (or `^Z`). It's as easy
 as saying "OK Uno runtime, please query interface X undo manager supplier doc, get undo manager"...
 seriously, though:
 
