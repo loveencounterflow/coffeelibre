@@ -205,7 +205,6 @@ Enjoy:
 
 ````xml
 <parcel language="JavaScript" xmlns:parcel="scripting.dtd">
-
     <script language="JavaScript">
         <locale lang="en">
             <displayname value="CoffeeLibre Demo"/>
@@ -216,14 +215,13 @@ Enjoy:
         <functionname value="main.js"/>
         <logicalname value="Main.JavaScript"/>
     </script>
-
 </parcel>
 ````
 
-We've basically wasted a lot of keystrokes to reassure OpenOffice (1 + 3 times) that what we have here (yes,
-in OOo's own `Scripts/javascript` folder) is a JavaScript macro, and that its name is `CoffeeLibre Demo`.
-Of course, a simple convention-over-configuration agreement would have obliterated the need for this
-configuration file, but what's not to like about writing redundant XML?
+We've basically wasted a lot of keystrokes to reassure OpenOffice—**five times**, no less—that what we have
+here (yes, in OOo's own `Scripts/javascript` folder) is a JavaScript macro, and that its name is
+`CoffeeLibre Demo`. Of course, a simple convention-over-configuration agreement would have obliterated the
+need for this configuration file, but what's not to like about writing redundant XML?
 
 
 #### XXXXXXXXX
