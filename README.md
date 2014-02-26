@@ -118,7 +118,7 @@ There are a few points that merit your attention in these snippets:
   * `importClass`
   * `XSCRIPTCONTEXT`
   * `UnoRuntime`
-  * `GLOBAL` (not shown here)
+  * `Global` (not shown here)
 
   are not part of standard JavaScript (why the OOo folks chose to distribute their custom facilities in no
     less than four different objects i have no clue).
@@ -197,6 +197,39 @@ retrievable from https://www.openoffice.org/api/docs/java/ref/com/sun/star/uno/U
 Anyone feeling the urge to shout 'JUST GIMME THAT DARN OBJECT ALREADY' at this point?
 
 
+#### Bootstrapping
+
+These are the first few lines of `coffeelibre/src/main.coffee`:
+
+````coffeescript
+#-----------------------------------------------------------------------------------------------------------
+### NB in OpenOffice:   importClass          org.mozilla.javascript.Context ??? ###
+### NB in LibreOffice:  importClass Packages.org.mozilla.javascript.Context ??? ###
+importClass Packages.org.mozilla.javascript.Context
+importClass Packages.org.mozilla.javascript.tools.shell.Global
+#...........................................................................................................
+GLOBAL        = new Global Context.enter()
+#-----------------------------------------------------------------------------------------------------------
+prefix = '/Applications/OpenOffice.app/Contents/share/Scripts/javascript/CoffeeLibreDemo/'
+#...........................................................................................................
+### Globals ###
+eval GLOBAL.readFile prefix + 'require.js'
+eval GLOBAL.readFile prefix + 'import-classes.js'
+require.prefix = prefix
+#...........................................................................................................
+### Locals ###
+#...........................................................................................................
+TRM                       = require 'coffeelibre-trm'
+CHR                       = require 'coffeenode-chr'
+TEXT                      = require 'coffeenode-text'
+TYPES                     = require 'coffeenode-types'
+font_name_by_rsg          = require 'font-name-by-rsg'
+#...........................................................................................................
+CL                        = require 'coffeelibre'
+````
+
+
+
 #### XXXXXXXXX
 
 Each macro needs to have a `parcel-descriptor.xml` in its folder; you'll find one under
@@ -219,9 +252,9 @@ Enjoy:
 ````
 
 We've basically wasted a lot of keystrokes to reassure OpenOffice—**five times**, no less—that what we have
-here (yes, in OOo's own `Scripts/javascript` folder) is a JavaScript macro, and that its name is
-`CoffeeLibre Demo`. Of course, a simple convention-over-configuration agreement would have obliterated the
-need for this configuration file, but what's not to like about writing redundant XML?
+here (yes, in OOo's own `Scripts/javascript` folder) is a JavaScript macro indeed. Of course, a simple
+convention-over-configuration agreement would have obliterated the need for this configuration file, but
+what's not to like about writing redundant XML?
 
 
 #### XXXXXXXXX
