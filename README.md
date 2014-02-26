@@ -179,7 +179,7 @@ of free-and-easy programmers quite often. So why not abstract the bejeezes out o
 
 ![very abstract](https://raw.github.com/loveencounterflow/coffeelibre/master/art/extreme-abstracting.jpg)
 
-> art by http://geek-and-poke.com/
+> art by http://geek-and-poke.com/; also see http://abstractsingletonproxyfactorybean.com
 
 Basically, `XSCRIPTCONTEXT.getDocument()` gives you an object that represents *something* in a hand-waving
 non-committal fashion, and *nothing in particular* at the same time. To get more specific, we still have to
