@@ -155,14 +155,17 @@ UnoRuntime.queryInterface XSpreadsheetDocument, doc
 ````
 
 monkey business that, if not kept at bay, would permeat each and every step you want to take when scripting.
-It does look that, being the smart guys they are, the OOo folks chose to embrace Java (and XML) to the
-fullest and
+
+It would appear that, being the smart guys they are, the OOo folks chose to embrace Java (and XML) to the
+fullest. Of course, Java being Java, it does embrace static typing—a feature well known to get into the way
+of free-and-easy programmers quite often. So why not abstract the bejeezes out of it?
 
 ![very abstract](https://raw.github.com/loveencounterflow/coffeelibre/master/art/extreme-abstracting.jpg)
 
-http://geek-and-poke.com/
+> art by http://geek-and-poke.com/
 
-
+Basically, `XSCRIPTCONTEXT.getDocument()` gives you an object that represents *something* in a hand-waving
+non-committal fashion, and *nothing in particular* at the same time.
 
 #### XXXXXXXXX
 
