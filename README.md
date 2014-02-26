@@ -24,11 +24,15 @@ good enough to visualize that tree, and that i could repurpose a spreadsheet—b
 automaton of sorts—to help me allocate spaces and characters in a suitable fashion, so i turned to
 OpenOffice.
 
-I quickly found what i always find after opening an OpenOffice application: that its interface is incredibly
-clunky, ugly, and backwards; that its developers have a propensity to hide functionalities in deeply nested
-menus, submenus, and subsubsubsmenus, that new versions of it are unlikely to come up with anything new,
-that it is quite happy to crash any given moment, and that especially OpenOffice Calc is incredibly stupid /
-stubborn / incapable of doing any consistent formatting (with or without using named styles).
+I quickly found what i always find after opening an OpenOffice application:
+
+* that its interface is incredibly clunky, ugly, and backwards;
+* that its developers have a propensity to hide functionalities in deeply nested
+  menus, submenus, and subsubsubmenus;
+* that new versions of it are unlikely to come up with anything new;
+* that it's quite happy to crash any given moment, and
+* that (especially Calc) is incredibly stupid / stubborn / incapable of doing any meaningful / consistent
+  formatting (with or without using named styles).
 
 Lacking alternatives and wanting to get on with my idea, i looked into writing macros for my purpose. The
 thinking was that i needed several different fonts for the Chinese characters alone, as they are spread
@@ -175,7 +179,7 @@ retrievable from https://www.openoffice.org/api/docs/java/ref/com/sun/star/uno/U
 > unspecified whether the returned Java object is the same as the given object, or is another facet of
 > that UNO object.
 
-
+Anyone shouting 'JUST GIMME THAT DARN OBJECT ALREADY' at this point?
 
 #### XXXXXXXXX
 
