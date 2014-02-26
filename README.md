@@ -199,7 +199,10 @@ Anyone feeling the urge to shout 'JUST GIMME THAT DARN OBJECT ALREADY' at this p
 
 #### Bootstrapping
 
-These are the first few lines of `coffeelibre/src/main.coffee`:
+In order to bring macro programming more into line with programming in NodeJS, we have to sort of 'bootstrap'
+so we get access to such important facilities as, for example, `require`ing modules and printing object
+APIs to the command line. Here are the first few lines of `coffeelibre/src/main.coffee`, showing the
+shortest boilerplate i felt able to come up with:
 
 ````coffeescript
 #-----------------------------------------------------------------------------------------------------------
@@ -208,6 +211,7 @@ These are the first few lines of `coffeelibre/src/main.coffee`:
 importClass Packages.org.mozilla.javascript.Context
 importClass Packages.org.mozilla.javascript.tools.shell.Global
 #...........................................................................................................
+# Why not simply provide a `Global` object? Because that would be too simple??
 GLOBAL        = new Global Context.enter()
 #-----------------------------------------------------------------------------------------------------------
 prefix = '/Applications/OpenOffice.app/Contents/share/Scripts/javascript/CoffeeLibreDemo/'
@@ -232,6 +236,23 @@ rpr                       = TRM.rpr.bind TRM
 xray                      = TRM.xray.bind TRM
 ````
 
+> I would've liked very much to get that problematic file locator out of the code, but didn't manage to;
+> pull requests welcome!
+
+What happens here is, in a nutshell, that we first avail ourselves of the `Context` and `Global` objects,
+which we *both* need to construct a `GLOBAL` object; that `GLOBAL` object in turn has a method `readFile`.
+
+We then `eval GLOBAL.readFile prefix + 'require.js'`, which gives us an approximate re-implementation of the
+NodeJS `require` keyword (which lands in the global namespace). We then proceed to load a fair number of
+Java classes that come under such delicious names as `com.sun.star.style.XStyleFamiliesSupplier` and
+`com.sun.star.script.provider.MasterScriptProviderFactory` (but, alas, no `AbstractSingletonProxyFactoryBean`).
+
+Next, we load some utility classes: `TRM` is a dumbed-down version of
+[`coffeenode-trm`](https://github.com/loveencounterflow/coffeenode-trm) and provides TeRMinal printout
+methods, while `CHR`, `TEXT` and `TYPES` are copied without changes from
+[`coffeenode-chr`](https://github.com/loveencounterflow/coffeenode-chr),
+[`coffeenode-text`](https://github.com/loveencounterflow/coffeenode-text), and
+[`coffeenode-types`](https://github.com/loveencounterflow/coffeenode-types), respectively.
 
 
 #### XXXXXXXXX
@@ -290,11 +311,15 @@ cd -
 > will show them as files (which are run on double-click rather than entered into); PathFinder does have a
 > `View / Show Package Contents` option in its menu two switch between normal and nerd modes.
 
+Run
 
+````bash
+coffee --watch --output ~/coffeelibre/lib --compile ~/coffeelibre/src
+````
 
-
-
-
+in a terminal window to ensure all your changes in your CoffeeScript sources will be immediately reflected
+in the JavaScript transpilation targets (fortunately, OOo does not appear to cache macros, so its easy to
+always work with up-to-date sources).
 
 # Materials
 
