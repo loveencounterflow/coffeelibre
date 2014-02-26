@@ -47,6 +47,8 @@ to give it a try.
 
 ### How?
 
+#### The Disappointing Hello World Example
+
 Which is where my troubles started. The OpenOffice folks are quite dexterous at producing a huge pile of
 documentation on their website (or at least they were when they stopped updating a lot of the stuff years
 ago). They are also very good at providing a Hello World example in no less than five language variants.
@@ -98,7 +100,35 @@ That's a whopping dev rate of about 71 characters per year (of course i'm cheati
 is much higher, since the last significant changes to the code shown must have occurred more than four years
 ago, according to the Wiki's history page).
 
+Alas, elaborate as the code is, it won't work with OpenOffice Calc, only in Writer; also, there is a
+likelyhood that it will crash on OSX, since there is a log-standing bug that keeps macros from using
+Java AWT stuff (google `openoffice osx awt` for this one).
 
+#### XXXXXXXXX
+
+Still, i managed to get the sample code running, and intense use of search engines turned up various code
+snippets. I then set out to translate those snippets into CoffeeScript, isolate pertinent pieces of
+functionality, and organize them into functions with meaningful names. It's really very much a matter of
+undoing the unholy mess that the OOo API is. I mean, consider this:
+
+
+````coffeescript
+@get_current_doc = ->
+  return XSCRIPTCONTEXT.getDocument()
+
+@get_current_sheet_name = ( doc ) ->
+  ### Not sure whether it has to be **this** convoluted, but then, here we are, doing OOo... ###
+  model = UnoRuntime.queryInterface XModel, doc
+  controller = model.getCurrentController()
+  view = UnoRuntime.queryInterface XSpreadsheetView, controller
+  sheet = view.getActiveSheet()
+  sheet = UnoRuntime.queryInterface XNamed, sheet
+  return sheet.name
+````
+
+
+
+#### XXXXXXXXX
 
 While there is (on OSX) a folder `~/Library/Application Support/OpenOffice/4/user/Scripts` (which may
 or may not work for scripting as described here), i chose to use
