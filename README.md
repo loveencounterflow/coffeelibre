@@ -199,9 +199,15 @@ Anyone feeling the urge to shout 'JUST GIMME THAT DARN OBJECT ALREADY' at this p
 
 #### XXXXXXXXX
 
-![a](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 15.48.58.png)
+![Accessing the OOo Macro Administration Facility (a)](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 15.48.58.png "Accessing the OOo Macro Administration Facility (a)")
+Accessing the OOo Macro Administration Facility (a)
+
+
+![Accessing the OOo Macro Administration Facility (b)](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.40.52.png "Accessing the OOo Macro Administration Facility (b)")
+Accessing the OOo Macro Administration Facility (b)
 
 ![Assigning a keyboard shortcut to your macro](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.24.42.png "Assigning a keyboard shortcut to your macro")
+Assigning a keyboard shortcut to your macro
 
 While there is (on OSX) a folder `~/Library/Application Support/OpenOffice/4/user/Scripts` (which may
 or may not work for scripting as described here), i chose to use
