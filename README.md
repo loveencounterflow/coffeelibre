@@ -188,8 +188,8 @@ obfuscated / helpless way of bringing a modicum of dynamism into that rigid beas
 what people do when implementing, say, JavaScript in Java. To quote from the docs (which are easily
 retrievable from https://www.openoffice.org/api/docs/java/ref/com/sun/star/uno/UnoRuntime.html#queryInterface%28com.sun.star.uno.Type,%20java.lang.Object%29)
 
-> [`UnoRuntime.queryInterface`] returns null in case the given UNO object does not support the given UNO
-> interface type (or is itself null). Otherwise, a reference to a Java object implementing the Java
+> [`UnoRuntime.queryInterface`] returns `null` in case the given UNO object does not support the given UNO
+> interface type (or is itself `null`). Otherwise, a reference to a Java object implementing the Java
 > interface type corresponding to the given UNO interface is returned. In the latter case, it is
 > unspecified whether the returned Java object is the same as the given object, or is another facet of
 > that UNO object.
