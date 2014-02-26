@@ -112,22 +112,51 @@ Java AWT stuff (google `openoffice osx awt` for this one).
 Still, i managed to get the sample code running, and intense use of search engines turned up various code
 snippets. I then set out to translate those snippets into CoffeeScript, isolate pertinent pieces of
 functionality, and organize them into functions with meaningful names. It's really very much a matter of
-undoing the unholy mess that the OOo API is. I mean, consider this:
+undoing the unholy mess that the OOo API is. I mean, consider this code that essentially just gives you
+an object that represents the current spreadsheet:
 
 
 ````coffeescript
 @get_current_doc = ->
   return XSCRIPTCONTEXT.getDocument()
 
+@_get_spreadsheet_doc = ( doc ) ->
+  return UnoRuntime.queryInterface XSpreadsheetDocument, doc
+
+@get_sheets = ( doc ) ->
+  R               = []
+  sheets_by_name  = ( @_get_spreadsheet_doc doc ).getSheets()
+  for idx in [ 0 ... sheets_by_name.elementNames.length ]
+    sheet_name      = sheets_by_name.elementNames[ idx ]
+    sheet           = sheets_by_name.getByName sheet_name
+    R[ sheet_name ] = sheet
+    R[ idx        ] = sheet
+  return R
+
 @get_current_sheet_name = ( doc ) ->
-  ### Not sure whether it has to be **this** convoluted, but then, here we are, doing OOo... ###
-  model = UnoRuntime.queryInterface XModel, doc
-  controller = model.getCurrentController()
-  view = UnoRuntime.queryInterface XSpreadsheetView, controller
-  sheet = view.getActiveSheet()
-  sheet = UnoRuntime.queryInterface XNamed, sheet
+  model       = UnoRuntime.queryInterface XModel, doc
+  controller  = model.getCurrentController()
+  view        = UnoRuntime.queryInterface XSpreadsheetView, controller
+  sheet       = view.getActiveSheet()
+  sheet       = UnoRuntime.queryInterface XNamed, sheet
   return sheet.name
+
+@get_current_sheet = ( doc ) ->
+  return ( @get_sheets doc )[ @get_current_sheet_name doc ]
 ````
+
+There's a good chance that my code could be made more efficient, but then it does work as it stands. The
+important thing to understand here (and the one most annoying thing you will want to abstract away like
+crazy) is that insane
+
+````coffeescript
+doc = XSCRIPTCONTEXT.getDocument()
+UnoRuntime.queryInterface XSpreadsheetDocument, doc
+````
+
+monkey business that, if not kept at bay, would permeat each and every step you want to take when scripting.
+It does look that, being the smart guys they are, the OOo folks chose to embrace Java (and XML) to the
+fullest and
 
 
 
