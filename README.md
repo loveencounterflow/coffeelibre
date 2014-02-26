@@ -21,7 +21,7 @@ You can achieve to remedy all of the above to a certain degree by
 
 ### Why?
 
-It so happened that a while ago i had a fancy idea how to catalogue components of Chinese characters in a
+A while ago i had a fancy idea how to catalogue components of Chinese characters in a
 tree-like fashion; all i wanted was a software that would be more amenable to try out this idea than a pure
 text format (which i had tried). I figured that using Unicode box drawing characters as connectors should be
 good enough to visualize that tree, and that i could repurpose a spreadsheet—basically, a cellular
@@ -65,6 +65,8 @@ format characters in spreadsheet cells according to their respective Unicode cod
 implementations in Coffee/JavaScript to do exactly that, except for the part where i had to tell OpenOffice
 to apply the formatting. Since OpenOffice does boast support for JavaScript as macro languages, so i decided
 to give it a try.
+
+![result](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 20.31.51.png)
 
 
 ### How?
