@@ -1,8 +1,7 @@
-coffeelibre
-===========
+## coffeelibre
 
 
-# Why?
+### Why?
 
 There are not too many options when it comes to chosing a free and open spreadsheet solution. Online
 solutions i've tried were often too clunky and restricted in their possibilities, and MS Excel—while
@@ -47,7 +46,7 @@ to give it a try.
 
 
 
-# How?
+### How?
 
 While there is (on OSX) a folder `~/Library/Application Support/OpenOffice/4/user/Scripts` (which may
 or may not work for scripting as described here), i chose to use
