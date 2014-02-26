@@ -79,8 +79,12 @@ I succeeded in so far as i managed to draw a tree and leave most of the formatti
 Observe how tree lines are drawn in grey, and Chinese characters (and components) have blue backgrounds.
 What you cannot immediately see is that the Chinese stuff in this picture comes from three different
 fonts—characters identified with prefixes `u-cjk-` and `u-cjk-xa` use Sun-ExtA.ttf, those with `u-cjk-xb`
-use (a fork of) Sun-ExtB.ttf, and those marked with a `jzr-` use a font i produced with fontforge, as
-those glyphs are not encoded in Unicode (as of v6.3).
+use (a fork of) Sun-ExtB.ttf, and those marked with a `jzr-` use a font i produced with fontforge, as those
+glyphs are not encoded in Unicode (as of v6.3). It would be a quite exacting task to get these formatting
+details right in a manual fashion, especially since OpenOffice has a habit of not doing what you would
+expect it to do when moving cell contents or when adding or deleting columns. Having bound the macro to a
+convenient keyboard shortcut, it was a snap to simply select a given region of the spreadshit and hit the
+key combination to get all the details right.
 
 ### How?
 
