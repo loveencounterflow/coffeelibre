@@ -158,6 +158,10 @@ monkey business that, if not kept at bay, would permeat each and every step you 
 It does look that, being the smart guys they are, the OOo folks chose to embrace Java (and XML) to the
 fullest and
 
+![very abstract](https://raw.github.com/loveencounterflow/coffeelibre/master/art/extreme-abstracting.jpg)
+
+http://geek-and-poke.com/
+
 
 
 #### XXXXXXXXX
