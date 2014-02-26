@@ -26,13 +26,13 @@ OpenOffice.
 
 I quickly found what i always find after opening an OpenOffice application:
 
-* that its interface is incredibly clunky, ugly, and backwards;
-* that its developers have a propensity to hide functionalities in deeply nested
+* that its **interface** is **incredibly clunky, ugly, and backwards**;
+* that its developers have a propensity to **hide functionalities** in deeply nested
   menus, submenus, and subsubsubmenus;
-* that new versions of it are unlikely to come up with anything new;
-* that it's quite happy to crash any given moment, and
-* that (especially Calc) is incredibly stupid / stubborn / incapable of doing any meaningful / consistent
-  formatting (with or without using named styles).
+* that new versions of it are **unlikely to come up with anything new**;
+* that it's quite **happy to crash** any given moment, and
+* that (especially Calc) is **incredibly stupid** / stubborn / incapable of doing any meaningful / consistent
+  **formatting** (with or without using named styles).
 
 Lacking alternatives and wanting to get on with my idea, i looked into writing macros for my purpose. The
 thinking was that i needed several different fonts for the Chinese characters alone, as they are spread
