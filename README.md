@@ -1,6 +1,10 @@
 ## coffeelibre
 
 
+### What?
+
+
+
 ### Why?
 
 There are not too many options when it comes to chosing a free and open spreadsheet solution. Online
@@ -211,8 +215,8 @@ shortest boilerplate i felt able to come up with:
 importClass Packages.org.mozilla.javascript.Context
 importClass Packages.org.mozilla.javascript.tools.shell.Global
 #...........................................................................................................
-# Why not simply provide a `Global` object? Because that would be too simple??
-GLOBAL        = new Global Context.enter()
+# Why not simply provide a `Global` object? Because that would be too obvious???
+GLOBAL = new Global Context.enter()
 #-----------------------------------------------------------------------------------------------------------
 prefix = '/Applications/OpenOffice.app/Contents/share/Scripts/javascript/CoffeeLibreDemo/'
 #...........................................................................................................
@@ -252,7 +256,54 @@ Next, we load some utility classes: `TRM` is a dumbed-down version of
 methods, while `CHR`, `TEXT` and `TYPES` are copied without changes from
 [`coffeenode-chr`](https://github.com/loveencounterflow/coffeenode-chr),
 [`coffeenode-text`](https://github.com/loveencounterflow/coffeenode-text), and
-[`coffeenode-types`](https://github.com/loveencounterflow/coffeenode-types), respectively.
+[`coffeenode-types`](https://github.com/loveencounterflow/coffeenode-types), respectively (`TEXT` provides
+string manipulation routines; `CHR` is all about Unicode character codepoints, and `TYPES` gives us
+sane JS typechecking methods).
+
+**Notice that we `eval` the source of `require.js` in the context of our `main` module, which
+CoffeeScript wrapped into `(function(){}).call(this)`; this means that the code in `require.js` can access
+e.g. our `GLOBAL` variable.
+
+
+#### Undo Transactions
+
+OpenOffice not only provides multi-level undo, the undo functionality is also made available to scripts.
+Even better, multiple atomic actions can be grouped together so they appear as single steps in the undo
+actions lists. This means you can write complex macros that e.g. format lots and lots of cells in a
+spreadsheet and you can still undo the entire transaction with a single `⌘Z` (or `ctrl+z`). It's as easy
+as saying "OK Uno runtime, please query interface X undo manager supplier doc, get undo manager"...
+seriously, though:
+
+````coffeescript
+#-----------------------------------------------------------------------------------------------------------
+@get_undo_manager = ( doc ) ->
+  ### Note: this could very well be made a private method. ###
+  return ( UnoRuntime.queryInterface XUndoManagerSupplier, doc ).getUndoManager()
+
+#-----------------------------------------------------------------------------------------------------------
+@step = ( doc, title, action ) ->
+  ### Perform an atomic, undoable action. ###
+  UNDO  = @get_undo_manager doc
+  UNDO.enterUndoContext title
+  #.........................................................................................................
+  try
+    action()
+  finally
+    UNDO.leaveUndoContext()
+  #.........................................................................................................
+  return null
+````
+
+> **Note**: i've decided to take `doc = COFFEELIBRE.get_current_doc()` as the first parameter in all of my
+> CoffeeLibre methods, whether it is strictly by a given method or not; this is similar to the explicit
+> `self` in Python and a consequence of the Data-Centric, Library-Oriented programming methodology that i
+> tend to write all my stuff in.
+
+Undo transactions are simple to use with this setup; just write
+
+````coffeescript
+  COFFEELIBRE.step doc, 'some descriptive title', -> do something here
+````
 
 
 #### XXXXXXXXX
