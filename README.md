@@ -14,7 +14,7 @@ between one of the `/[a-z]+office\.org/` alternatives; more specifically,
 
 which are essentially clones of each other.
 
-> Of these, NeoOffice leaves the best impression on OSX; i will still use OpenOffice for the purposes of
+> Of these, NeoOffice gives the best impression on OSX; i will still use OpenOffice for the purposes of
 > the present discussion.
 
 It so happened that a while ago i had a fancy idea how to catalogue components of Chinese characters in a
@@ -45,8 +45,12 @@ to apply the formatting. Since OpenOffice does boast support for JavaScript as m
 to give it a try.
 
 
-
 ### How?
+
+Which is where my troubles started. The OpenOffice folks are quite dexterous at producing a huge pile of
+documentation on their website (or at least they were when they stopped updating a lot of the stuff years
+ago).
+
 
 While there is (on OSX) a folder `~/Library/Application Support/OpenOffice/4/user/Scripts` (which may
 or may not work for scripting as described here), i chose to use
