@@ -201,7 +201,7 @@ Anyone feeling the urge to shout 'JUST GIMME THAT DARN OBJECT ALREADY' at this p
 
 ![a](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 15.48.58.png)
 
-![b](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.24.42.png)
+![Assigning a keyboard shortcut to your macro](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.24.42.png "Assigning a keyboard shortcut to your macro")
 
 While there is (on OSX) a folder `~/Library/Application Support/OpenOffice/4/user/Scripts` (which may
 or may not work for scripting as described here), i chose to use
