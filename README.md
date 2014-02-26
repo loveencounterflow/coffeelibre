@@ -179,7 +179,7 @@ of free-and-easy programmers quite often. So why not abstract the bejeezes out o
 
 ![very abstract](https://raw.github.com/loveencounterflow/coffeelibre/master/art/extreme-abstracting.jpg)
 
-> art by http://geek-and-poke.com/; also see http://abstractsingletonproxyfactorybean.com
+> art by http://geek-and-poke.com/; see also http://abstractsingletonproxyfactorybean.com
 
 Basically, `XSCRIPTCONTEXT.getDocument()` gives you an object that represents *something* in a hand-waving
 non-committal fashion, and *nothing in particular* at the same time. To get more specific, we still have to
@@ -195,6 +195,35 @@ retrievable from https://www.openoffice.org/api/docs/java/ref/com/sun/star/uno/U
 > that UNO object.
 
 Anyone feeling the urge to shout 'JUST GIMME THAT DARN OBJECT ALREADY' at this point?
+
+
+#### XXXXXXXXX
+
+Each macro needs to have a `parcel-descriptor.xml` in its folder; you'll find one under
+`coffeelibre/lib/parcel-descriptor.xml` (since that is the folder we linked into the OOo scripts folder).
+Enjoy:
+
+````xml
+<parcel language="JavaScript" xmlns:parcel="scripting.dtd">
+
+    <script language="JavaScript">
+        <locale lang="en">
+            <displayname value="CoffeeLibre Demo"/>
+            <description>
+                A Demo of CoffeeLibre.
+            </description>
+        </locale>
+        <functionname value="main.js"/>
+        <logicalname value="Main.JavaScript"/>
+    </script>
+
+</parcel>
+````
+
+We've basically wasted a lot of keystrokes to reassure OpenOffice (1 + 3 times) that what we have here (yes,
+in OOo's own `Scripts/javascript` folder) is a JavaScript macro, and that its name is `CoffeeLibre Demo`.
+Of course, a simple convention-over-configuration agreement would have obliterated the need for this
+configuration file, but what's not to like about writing redundant XML?
 
 
 #### XXXXXXXXX
