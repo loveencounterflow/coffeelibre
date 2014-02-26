@@ -27,12 +27,12 @@ OpenOffice.
 I quickly found what i always find after opening an OpenOffice application:
 
 * that its **interface** is **incredibly clunky, ugly, and backwards**;
-* that its developers have a propensity to **hide functionalities** in deeply nested
-  menus, submenus, and subsubsubmenus;
+* that its developers have a propensity to **hide functionalities in deeply nested
+  menus, submenus, and subsubsubmenus**;
 * that new versions of it are **unlikely to come up with anything new**;
 * that it's quite **happy to crash** any given moment, and
-* that (especially Calc) is **incredibly stupid** / stubborn / incapable of doing any meaningful / consistent
-  **formatting** (with or without using named styles).
+* that (especially Calc) is **incredibly stupid / stubborn / incapable of doing any meaningful / consistent
+  formatting** (with or without using named styles).
 
 Lacking alternatives and wanting to get on with my idea, i looked into writing macros for my purpose. The
 thinking was that i needed several different fonts for the Chinese characters alone, as they are spread
@@ -110,6 +110,18 @@ ago, according to the Wiki's history page).
 Alas, elaborate as the code is, it won't work with OpenOffice Calc, only in Writer; also, there is a
 likelyhood that it will crash on OSX, since there is a log-standing bug that keeps macros from using
 Java AWT stuff (google `openoffice osx awt` for this one).
+
+There are a few points that merit your attention in these snippets:
+
+* there's this strange `queryInterface` call which we'll discuss in a moment;
+* while the examples are basically JavaScript, some of the vocabulary is non-standard; in particular,
+  * `importClass`
+  * `XSCRIPTCONTEXT`
+  * `UnoRuntime`
+  * `GLOBAL` (not shown here)
+  are not part of standard JavaScript. Why the OOo folks chose to distribute their custom facilities in no
+  less than four different objects i have no clue.
+
 
 #### XXXXXXXXX
 
