@@ -49,7 +49,55 @@ to give it a try.
 
 Which is where my troubles started. The OpenOffice folks are quite dexterous at producing a huge pile of
 documentation on their website (or at least they were when they stopped updating a lot of the stuff years
-ago).
+ago). They are also very good at providing a Hello World example in no less than five language variants.
+They're also masters in letting the matter rest at that; if you're in for some JS-in-OOo macro fun, this
+much is about how much you're going to get from a readily available source. They're also lightning fast in
+updating their sample snippets. Let's have a look at the code (on
+https://wiki.openoffice.org/wiki/Documentation/DevGuide/Scripting/Writing_Macros):
+
+in 2007 (412 characters):
+
+    importClass(Packages.com.sun.star.uno.UnoRuntime);
+    importClass(Packages.com.sun.star.text.XTextDocument);
+    importClass(Packages.com.sun.star.text.XText);
+    importClass(Packages.com.sun.star.text.XTextRange);
+
+    oDoc = XSCRIPTCONTEXT.getDocument();
+    xTextDoc = UnoRuntime.queryInterface(XTextDocument,oDoc);
+    xText = xTextDoc.getText();
+    xTextRange = xText.getEnd();
+    xTextRange.setString( "Hello World (in JavaScript)" );
+
+
+in 2014 (909 characters, not counting comments):
+
+    importClass(Packages.com.sun.star.uno.UnoRuntime)
+    importClass(Packages.com.sun.star.text.XTextDocument)
+    importClass(Packages.com.sun.star.text.XText)
+    importClass(Packages.com.sun.star.text.XTextRange)
+    importClass(Packages.com.sun.star.beans.XPropertySet)
+    importClass(Packages.com.sun.star.awt.FontSlant)
+    importClass(Packages.com.sun.star.awt.FontUnderline)
+
+    oDoc = XSCRIPTCONTEXT.getDocument()
+    xTextDoc = UnoRuntime.queryInterface(XTextDocument,oDoc)
+    xText = xTextDoc.getText()
+    xTextRange = xText.getEnd()
+    pv = UnoRuntime.queryInterface(XPropertySet, xTextRange)
+
+    pv.setPropertyValue("CharHeight", 16.0) // Double
+    // CharBackColor receives an Integer
+    pv.setPropertyValue("CharBackColor", new java.lang.Integer(1234567))
+    // CharUnderline receives a group constant
+    pv.setPropertyValue("CharUnderline", new java.lang.Short(Packages.com.sun.star.awt.FontUnderline.WAVE))
+    // CharPosture receives an enum
+    pv.setPropertyValue("CharPosture", Packages.com.sun.star.awt.FontSlant.ITALIC)
+    xTextRange.setString( "Hello World (in JavaScript)" )
+
+That's a whopping dev rate of about 71 characters per year (of course i'm cheating here—the actual rate
+is much higher, since the last significant changes to the code shown must have occurred more than four years
+ago, according to the Wiki's history page).
+
 
 
 While there is (on OSX) a folder `~/Library/Application Support/OpenOffice/4/user/Scripts` (which may
