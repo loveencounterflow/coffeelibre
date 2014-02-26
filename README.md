@@ -9,8 +9,14 @@
 OpenOffice macros suffer from a number of problems:
 
 * they are hard to access and maintain from within the OpenOffice GUI;
-* writing macros with one of the several script editors provided by OOo is an unpleasant experience at best;
+* writing macros with one of the several(!)* script editors provided by OOo is an unpleasant experience at best;
 * writing OOo macros in JavaScript is possible, but results in incredibly convoluted code.
+
+> *) I have no idea what it is that makes application authors assume they will be capable of writing a
+> decent embedded code editor; maybe the thinking is that programs like Calc and Writer are 'inherently more
+> complex' than 'a meak text editor' so once you're setting out to write something Calc, a code editor will
+> come at very low additional costs. Then again, i've seen people insist on using Windows Notepad to edit
+> their code...
 
 You can achieve to remedy all of the above to a certain degree by
 
