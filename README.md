@@ -70,14 +70,14 @@ help me allocate spaces and characters in a suitable fashion.**
 
 **Unfortunately, there are not too many options when it comes to chosing a free and open spreadsheet
 solution.** Online spreadsheet i've tried were often too clunky and restricted in their possibilities, and
-MS Excel—while arguably the champion in this field—is neither free nor open. This leaves you with having to
-chose between one of the `/[a-z]+office\.org/` alternatives; more specifically,
+MS Excel—while arguably the champion in this field—is neither free nor open. This leaves you with a choice
+between one of the `/[a-z]+office\.org/` alternatives; more specifically,
 
 *   http://openoffice.org
 *   http://libreoffice.org
 *   http://neooffice.org
 
-which are essentially clones of each other.
+—which are, essentially, clones of each other.
 
 > Of these, NeoOffice gives the best impression on OSX; i will still use OpenOffice for the purposes of
 > the present discussion.
