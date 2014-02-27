@@ -6,7 +6,7 @@
 	- [How?](#how)
 		- [The Disappointing Hello World Example](#the-disappointing-hello-world-example)
 		- [Same Basic Samples](#same-basic-samples)
-			- [The Passive-Aggressive Treatment of Java in OOo](#the-passive-aggressive-treatment-of-java-in-ooo)
+		- [The Passive-Aggressive Treatment of Java in OOo](#the-passive-aggressive-treatment-of-java-in-ooo)
 		- [Bootstrapping](#bootstrapping)
 		- [Undo Transactions](#undo-transactions)
 		- [XXXXXXXXX](#xxxxxxxxx)
@@ -232,7 +232,7 @@ UnoRuntime.queryInterface XSpreadsheetDocument, doc
 
 monkey business that, if not kept at bay, would permeat each and every step you want to take when scripting.
 
-##### The Passive-Aggressive Treatment of Java in OOo
+#### The Passive-Aggressive Treatment of Java in OOo
 
 It would appear that, being the smart guys they are, the OOo folks chose to embrace Java (and XML) to the
 fullest. Of course, Java being Java, it does embrace static typing—a feature well known to get into the way
