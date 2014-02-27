@@ -35,12 +35,12 @@ OpenOffice macros suffer from a number of problems:
 > *) I have no idea what it is that makes application authors assume they will be capable of writing a
 > decent embedded code editor; maybe the thinking is that programs like Calc and Writer are 'inherently more
 > complex' than 'a meak text editor' so once you're setting out to write something Calc, a code editor will
-> come at very low additional costs. Then again, i've seen people insist on using Windows Notepad to edit
+> come at very low additional costs. Then again, i've met people who insist on using Windows Notepad to edit
 > their code...
 
-You can achieve to remedy all of the above to a certain degree by
+You can achieve to remedy all of the above—*to a certain degree*—by
 
-* keeping source files out of the OOo directory (creating symbolic links instead);
+* keeping source files out of the OOo directory tree (creating symbolic links instead);
 * authoring macros with your favorite text editor; and
 * wrapping up pieces of functionality—especially annoyingly long-winded OOo-API incantations—into
   libraries (for which [src/coffeelibre.coffee](src/coffeelibre.coffee) may serve as an example).
