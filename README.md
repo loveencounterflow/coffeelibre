@@ -11,8 +11,8 @@
 		- [Bootstrapping](#bootstrapping)
 		- [Cell Formatting Macro](#cell-formatting-macro)
 		- [Undo Transactions](#undo-transactions)
-		- [XXXXXXXXX](#xxxxxxxxx)
-		- [XXXXXXXXX](#xxxxxxxxx-1)
+		- [The Myghtye Parcell De-Scriptor](#the-myghtye-parcell-de-scriptor)
+		- [Getting Your Macro Into Place](#getting-your-macro-into-place)
 	- [Materials](#materials)
 		- [Cell Properties](#cell-properties)
 		- [The Global Object](#the-global-object)
@@ -467,7 +467,7 @@ Undo transactions are simple to use with this setup; just write
 ````
 
 
-#### XXXXXXXXX
+#### The Myghtye Parcell De-Scriptor
 
 Each macro needs to have a `parcel-descriptor.xml` in its folder; you'll find one under
 `coffeelibre/lib/parcel-descriptor.xml` (since that is the folder we linked into the AOO scripts folder).
@@ -494,7 +494,7 @@ convention-over-configuration agreement would have obliterated the need for this
 what's not to like about writing redundant XML?
 
 
-#### XXXXXXXXX
+#### Getting Your Macro Into Place
 
 While there is (on OSX) a folder `~/Library/Application Support/OpenOffice/4/user/Scripts` (which may
 or may not work for scripting as described here), i chose to use
