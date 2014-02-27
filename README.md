@@ -245,9 +245,9 @@ Anyone feeling the urge to shout 'JUST GIMME THAT DARN OBJECT ALREADY' at this p
 
 #### Bootstrapping
 
-In order to bring OOo JavaScript macro programming (which is done with the [Rhino VM](https://www.mozilla.org/rhino/))
+In order to bring OOo JavaScript macro programming (which happens inside the [Rhino VM](https://www.mozilla.org/rhino/))
 more into line with programming in NodeJS, we have to sort of 'bootstrap'
-so we get access to such important facilities as, for example, `require`ing modules and printing object
+in order to get access to such important facilities as, for example, `require`ing modules and printing object
 APIs to the command line. Here are the first few lines of `coffeelibre/src/main.coffee`, showing the
 shortest boilerplate i felt able to come up with:
 
@@ -303,19 +303,16 @@ methods, while `CHR`, `TEXT` and `TYPES` are copied without changes from
 string manipulation routines; `CHR` is all about Unicode character codepoints, and `TYPES` gives us
 sane JS typechecking methods).
 
-**Notice that we `eval` the source of `require.js` in the context of our `main` module, which
-CoffeeScript wrapped into `(function(){}).call(this)`; this means that the code in `require.js` can access
-e.g. our `GLOBAL` variable.
-
 
 #### Undo Transactions
 
 OpenOffice not only provides multi-level undo, the undo functionality is also made available to scripts.
 Even better, multiple atomic actions can be grouped together so they appear as single steps in the undo
 actions lists. This means you can write complex macros that e.g. format lots and lots of cells in a
-spreadsheet and you can still undo the entire transaction with a single `⌘Z` (or `^Z`). It's as easy
-as saying "OK Uno runtime, please query interface X undo manager supplier doc, get undo manager"...
-seriously, though:
+spreadsheet and you can still undo the entire transaction with a single `⌘Z` (or `^Z`).
+
+**Initiating an OOo undo transaction is as easy as saying "OK Uno runtime, please query interface X undo
+manager supplier doc, get undo manager"**... seriously, though:
 
 ````coffeescript
 #-----------------------------------------------------------------------------------------------------------
