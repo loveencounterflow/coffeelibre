@@ -6,7 +6,7 @@
 	- [How?](#how)
 		- [The Disappointing Hello World Example](#the-disappointing-hello-world-example)
 		- [Same Basic Samples](#same-basic-samples)
-		- [The Passive-Aggressive Treatment of Java in OOo](#the-passive-aggressive-treatment-of-java-in-ooo)
+		- [The Passive-Aggressive Treatment of Java in AOO](#the-passive-aggressive-treatment-of-java-in-aoo)
 		- [Bootstrapping](#bootstrapping)
 		- [Undo Transactions](#undo-transactions)
 		- [XXXXXXXXX](#xxxxxxxxx)
@@ -24,13 +24,13 @@
 
 ### What?
 
-**CoffeeLibre is an attempt to bring easier scripting with CoffeeScript to OpenOffice (OOo).**
+**CoffeeLibre is an attempt to bring easier scripting with CoffeeScript to Apache OpenOffice (AOO).**
 
 OpenOffice macros suffer from a number of problems:
 
 * they are hard to access and maintain from within the OpenOffice GUI;
-* writing macros with one of the several(!)* script editors provided by OOo is an unpleasant experience at best;
-* writing OOo macros in JavaScript is possible, but results in incredibly convoluted code.
+* writing macros with one of the several(!)* script editors provided by AOO is an unpleasant experience at best;
+* writing AOO macros in JavaScript is possible, but results in incredibly convoluted code.
 
 > *) I have no idea what it is that makes application authors assume they will be capable of writing a
 > decent embedded code editor; maybe the thinking is that programs like Calc and Writer are 'inherently more
@@ -40,9 +40,9 @@ OpenOffice macros suffer from a number of problems:
 
 You can achieve to remedy all of the above—*to a certain degree*—by
 
-* keeping source files out of the OOo directory tree (creating symbolic links instead);
+* keeping source files out of the AOO directory tree (creating symbolic links instead);
 * authoring macros with your favorite text editor; and
-* wrapping up pieces of functionality—especially annoyingly long-winded OOo-API incantations—into
+* wrapping up pieces of functionality—especially annoyingly long-winded AOO-API incantations—into
   libraries (for which [src/coffeelibre.coffee](src/coffeelibre.coffee) may serve as an example).
 
 ### Why?
@@ -103,7 +103,7 @@ different fonts—characters identified with prefixes `u-cjk-` and `u-cjk-xa` us
 as those glyphs are not encoded in Unicode (as of v6.3).
 
 **It would be quite an exacting task to get these formatting details right in a manual fashion, especially
-since OOo Calc has a habit of not doing what you would expect it to do when moving cell contents or when
+since AOO Calc has a habit of not doing what you would expect it to do when moving cell contents or when
 adding or deleting columns. Having bound the macro to a convenient keyboard shortcut, it was a snap to
 simply select a given region of the spreadshit and hit `⌘Y` to get all the details right.**
 
@@ -114,7 +114,7 @@ simply select a given region of the spreadshit and hit `⌘Y` to get all the det
 The OpenOffice folks are quite dexterous at producing a huge pile of documentation on their website (or at
 least they were when they stopped updating a lot of the stuff years ago). They are also very good at
 providing a Hello World example in no less than five language variants. They're also masters in letting the
-matter rest at that; if you're in for some JS-in-OOo macro fun, this much is about how much you're going to
+matter rest at that; if you're in for some JS-in-AOO macro fun, this much is about how much you're going to
 get from a readily available source. They're also lightning fast in updating their sample snippets. Let's
 have a look at the code (on
 https://wiki.openoffice.org/wiki/Documentation/DevGuide/Scripting/Writing_Macros):
@@ -166,7 +166,7 @@ is much higher, since the last significant changes to the code shown must have o
 ago, according to the Wiki's history page).
 
 Alas, elaborate as the code is, it won't work with OpenOffice Calc, only in Writer; also, there is a
-likelyhood that it will crash on OSX, since there is a long-standing bug that keeps OOo macros from using
+likelyhood that it will crash on OSX, since there is a long-standing bug that keeps AOO macros from using
 Java AWT stuff (google `openoffice osx awt` for this one).
 
 There are a few points that merit your attention in these snippets:
@@ -184,13 +184,13 @@ There are a few points that merit your attention in these snippets:
 
 Intense use of search engines turned up various code snippets.*
 
-> By far the most comprehensive archive of OOo JavaScript macros i've found is at http://openoffice3.web.fc2.com;
+> By far the most comprehensive archive of AOO JavaScript macros i've found is at http://openoffice3.web.fc2.com;
 > although those pages are written in Japanese, they should still prove valuable for the neophyte.
 > There's a mirror of the website at https://github.com/loveencounterflow/OpenOffice-macros.
 
 I then set out to translate those snippets into CoffeeScript, isolate pertinent pieces of
 functionality, and organize them into functions with meaningful names. **It's really very much a matter of
-undoing the unholy mess that the OOo API is.** I mean, consider this code that essentially just gives you
+undoing the unholy mess that the AOO API is.** I mean, consider this code that essentially just gives you
 an object that represents the current spreadsheet open in Calc:
 
 
@@ -234,9 +234,9 @@ UnoRuntime.queryInterface XSpreadsheetDocument, doc
 
 monkey business that, if not kept at bay, would permeat each and every step you want to take when scripting.
 
-#### The Passive-Aggressive Treatment of Java in OOo
+#### The Passive-Aggressive Treatment of Java in AOO
 
-It would appear that, being the smart guys they are, the OOo folks chose to embrace Java (and XML) to the
+It would appear that, being the smart guys they are, the AOO folks chose to embrace Java (and XML) to the
 fullest. Of course, Java being Java, it does embrace static typing—a feature well known to get into the way
 of free-and-easy programmers quite often. So why not abstract the bejeezes out of it?
 
@@ -267,7 +267,7 @@ Anyone feeling the urge to shout 'JUST GIMME THAT DARN OBJECT ALREADY' at this p
 
 #### Bootstrapping
 
-In order to bring OOo JavaScript macro programming (which happens inside the [Rhino VM](https://www.mozilla.org/rhino/))
+In order to bring AOO JavaScript macro programming (which happens inside the [Rhino VM](https://www.mozilla.org/rhino/))
 more into line with programming in NodeJS, we have to sort of 'bootstrap'
 in order to get access to such important facilities as, for example, `require`ing modules and printing object
 APIs to the command line. Here are the first few lines of `coffeelibre/src/main.coffee`, showing the
@@ -333,7 +333,7 @@ Even better, multiple atomic actions can be grouped together so they appear as s
 actions lists. This means you can write complex macros that e.g. format lots and lots of cells in a
 spreadsheet and you can still undo the entire transaction with a single `⌘Z` (or `^Z`).
 
-**Initiating an OOo undo transaction is as easy as saying "OK Uno runtime, please query interface X undo
+**Initiating an AOO undo transaction is as easy as saying "OK Uno runtime, please query interface X undo
 manager supplier doc, get undo manager"**... seriously, though:
 
 ````coffeescript
@@ -371,7 +371,7 @@ Undo transactions are simple to use with this setup; just write
 #### XXXXXXXXX
 
 Each macro needs to have a `parcel-descriptor.xml` in its folder; you'll find one under
-`coffeelibre/lib/parcel-descriptor.xml` (since that is the folder we linked into the OOo scripts folder).
+`coffeelibre/lib/parcel-descriptor.xml` (since that is the folder we linked into the AOO scripts folder).
 Enjoy:
 
 ````xml
@@ -390,7 +390,7 @@ Enjoy:
 ````
 
 We've basically wasted a lot of keystrokes to reassure OpenOffice—**five times**, no less—that what we have
-here (yes, in OOo's own `Scripts/javascript` folder) is a JavaScript macro indeed. Of course, a simple
+here (yes, in AOO's own `Scripts/javascript` folder) is a JavaScript macro indeed. Of course, a simple
 convention-over-configuration agreement would have obliterated the need for this configuration file, but
 what's not to like about writing redundant XML?
 
@@ -422,14 +422,14 @@ coffee --watch --output ~/coffeelibre/lib --compile ~/coffeelibre/src
 ````
 
 in a terminal window to ensure all your changes in your CoffeeScript sources will be immediately reflected
-in the JavaScript transpilation targets (fortunately, OOo does not appear to cache macros, so its easy to
+in the JavaScript transpilation targets (fortunately, AOO does not appear to cache macros, so its easy to
 always work with up-to-date sources).
 
-![Accessing the OOo Macro Administration Facility (a)](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 15.48.58.png "Accessing the OOo Macro Administration Facility (a)")
-*Accessing the OOo Macro Administration Facility (a)*
+![Accessing the AOO Macro Administration Facility (a)](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 15.48.58.png "Accessing the AOO Macro Administration Facility (a)")
+*Accessing the AOO Macro Administration Facility (a)*
 
-![Accessing the OOo Macro Administration Facility (b)](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.40.52.png "Accessing the OOo Macro Administration Facility (b)")
-*Accessing the OOo Macro Administration Facility (b)*
+![Accessing the AOO Macro Administration Facility (b)](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.40.52.png "Accessing the AOO Macro Administration Facility (b)")
+*Accessing the AOO Macro Administration Facility (b)*
 
 ![Assigning a keyboard shortcut to your macro](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.24.42.png "Assigning a keyboard shortcut to your macro")
 *Assigning a keyboard shortcut to your macro*
