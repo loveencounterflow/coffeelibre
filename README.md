@@ -48,7 +48,7 @@ You can achieve to remedy all of the above—*to a certain degree*—by
 
 ### Breaking News (2014-02-27@11:58 CET)
 
-JavaScript macros for AOO are run inside the [Rhino VM](https://www.mozilla.org/rhino/)). Now there's a
+JavaScript macros for AOO are run inside the [Rhino VM](https://www.mozilla.org/rhino/). Now there's a
 slight chance this choice may be made an option: Not only is there [DynJS](http://dynjs.org/), "an
 ECMAScript runtime for the JVM", there's [Nodyn](http://nodyn.io/), too, which describes itself as  "a
 node.js compatible framework, running on the JVM powered by the DynJS Javascript runtime running under
