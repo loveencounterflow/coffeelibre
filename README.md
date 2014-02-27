@@ -76,26 +76,26 @@ I succeeded in so far as i managed to draw a tree and leave most of the formatti
 
 ![result](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 20.31.51.png)
 
-Observe how tree lines are drawn in grey, and Chinese characters (and components) have blue backgrounds.
-What you cannot immediately see is that the Chinese stuff in this picture comes from three different
-fonts—characters identified with prefixes `u-cjk-` and `u-cjk-xa` use Sun-ExtA.ttf, those with `u-cjk-xb`
-use (a fork of) Sun-ExtB.ttf, and those marked with a `jzr-` use a font i produced with fontforge, as those
-glyphs are not encoded in Unicode (as of v6.3). It would be a quite exacting task to get these formatting
-details right in a manual fashion, especially since OpenOffice has a habit of not doing what you would
-expect it to do when moving cell contents or when adding or deleting columns. Having bound the macro to a
-convenient keyboard shortcut, it was a snap to simply select a given region of the spreadshit and hit the
-key combination to get all the details right.
+Observe how tree lines are drawn in grey, and Chinese characters (and components) have turquoise
+backgrounds. What you cannot immediately see is that the Chinese stuff in this picture comes from three
+different fonts—characters identified with prefixes `u-cjk-` and `u-cjk-xa` use Sun-ExtA.ttf, those with `u
+-cjk-xb` use (a fork of) Sun-ExtB.ttf, and those marked with a `jzr-` use a font i produced with fontforge,
+as those glyphs are not encoded in Unicode (as of v6.3). It would be quite an exacting task to get these
+formatting details right in a manual fashion, especially since OOo Calc has a habit of not doing what you
+would expect it to do when moving cell contents or when adding or deleting columns. Having bound the macro
+to a convenient keyboard shortcut, it was a snap to simply select a given region of the spreadshit and hit
+the key combination to get all the details right.
 
 ### How?
 
 #### The Disappointing Hello World Example
 
-Which is where my troubles started. The OpenOffice folks are quite dexterous at producing a huge pile of
-documentation on their website (or at least they were when they stopped updating a lot of the stuff years
-ago). They are also very good at providing a Hello World example in no less than five language variants.
-They're also masters in letting the matter rest at that; if you're in for some JS-in-OOo macro fun, this
-much is about how much you're going to get from a readily available source. They're also lightning fast in
-updating their sample snippets. Let's have a look at the code (on
+The OpenOffice folks are quite dexterous at producing a huge pile of documentation on their website (or at
+least they were when they stopped updating a lot of the stuff years ago). They are also very good at
+providing a Hello World example in no less than five language variants. They're also masters in letting the
+matter rest at that; if you're in for some JS-in-OOo macro fun, this much is about how much you're going to
+get from a readily available source. They're also lightning fast in updating their sample snippets. Let's
+have a look at the code (on
 https://wiki.openoffice.org/wiki/Documentation/DevGuide/Scripting/Writing_Macros):
 
 in 2007 (412 characters):
@@ -161,11 +161,16 @@ There are a few points that merit your attention in these snippets:
 
 #### XXXXXXXXX
 
-Still, i managed to get the sample code running, and intense use of search engines turned up various code
-snippets. I then set out to translate those snippets into CoffeeScript, isolate pertinent pieces of
+Still, i managed to get some sample code running, and intense use of search engines turned up various code
+snippets.*
+
+> By far the most comprehensive archive of OOo JavaScript macros i've found is at http://openoffice3.web.fc2.com;
+> although those pages are written in Japanese, they should still prove valuable for the neophyte.
+
+I then set out to translate those snippets into CoffeeScript, isolate pertinent pieces of
 functionality, and organize them into functions with meaningful names. It's really very much a matter of
 undoing the unholy mess that the OOo API is. I mean, consider this code that essentially just gives you
-an object that represents the current spreadsheet:
+an object that represents the current spreadsheet open in Calc:
 
 
 ````coffeescript
@@ -207,6 +212,8 @@ UnoRuntime.queryInterface XSpreadsheetDocument, doc
 ````
 
 monkey business that, if not kept at bay, would permeat each and every step you want to take when scripting.
+
+##### The Passive-Aggressive Treatment of Java in OOo
 
 It would appear that, being the smart guys they are, the OOo folks chose to embrace Java (and XML) to the
 fullest. Of course, Java being Java, it does embrace static typing—a feature well known to get into the way
