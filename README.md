@@ -251,9 +251,13 @@ of free-and-easy programmers quite often. So why not abstract the bejeezes out o
 
 Basically, `XSCRIPTCONTEXT.getDocument()` gives you an object that represents *something* in a hand-waving
 non-committal fashion, and *nothing in particular* at the same time. To get more specific, we still have to
-'wrap' that `NotAnythingInParticular` blob with an interface. As far as i understand it, this is a weak /
+'wrap' that `NotAnythingInParticular` blob with an interface.
+
+**As far as i understand it, this is a weak /
 obfuscated / helpless way of bringing a modicum of dynamism into that rigid beast that is Java—not unlike
-what people do when implementing, say, JavaScript in Java. To quote from the docs (which are easily
+what people do when implementing, say, JavaScript in Java.**
+
+To quote from the docs (which are easily
 retrievable from https://www.openoffice.org/api/docs/java/ref/com/sun/star/uno/UnoRuntime.html#queryInterface%28com.sun.star.uno.Type,%20java.lang.Object%29)
 
 > [`UnoRuntime.queryInterface`] returns `null` in case the given UNO object does not support the given UNO
