@@ -245,7 +245,8 @@ Anyone feeling the urge to shout 'JUST GIMME THAT DARN OBJECT ALREADY' at this p
 
 #### Bootstrapping
 
-In order to bring macro programming more into line with programming in NodeJS, we have to sort of 'bootstrap'
+In order to bring OOo JavaScript macro programming (which is done with the [Rhino VM](https://www.mozilla.org/rhino/))
+more into line with programming in NodeJS, we have to sort of 'bootstrap'
 so we get access to such important facilities as, for example, `require`ing modules and printing object
 APIs to the command line. Here are the first few lines of `coffeelibre/src/main.coffee`, showing the
 shortest boilerplate i felt able to come up with:
