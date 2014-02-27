@@ -11,10 +11,10 @@
 		- [Undo Transactions](#undo-transactions)
 		- [XXXXXXXXX](#xxxxxxxxx)
 		- [XXXXXXXXX](#xxxxxxxxx-1)
-- [Materials](#materials)
-	- [Cell Properties](#cell-properties)
-	- [The Global Object](#the-global-object)
-	- [Helpful Links](#helpful-links)
+	- [Materials](#materials)
+		- [Cell Properties](#cell-properties)
+		- [The Global Object](#the-global-object)
+		- [Helpful Links](#helpful-links)
 
 > **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
@@ -436,12 +436,10 @@ always work with up-to-date sources).
 
 
 
-## Materials
+### Materials
 
 
-Scripting Libre(Open/Neo)Office with CoffeeScript
-
-### Cell Properties
+#### Cell Properties
 
     doc         = CL.get_current_doc()
     sheet       = CL.get_current_sheet doc
@@ -545,7 +543,7 @@ Scripting Libre(Open/Neo)Office with CoffeeScript
     WritingMode
 
 
-### The Global Object
+#### The Global Object
 
     # defineClass
     # deserialize
@@ -588,7 +586,7 @@ Scripting Libre(Open/Neo)Office with CoffeeScript
     GLOBAL        = new Global Context.enter()
 
 
-### Helpful Links
+#### Helpful Links
 
 * http://openoffice3.web.fc2.com/JavaScript_general.html#OOoGFh1
 * http://classdoc.sourceforge.net/examples/so52apidoc/index-all.html
