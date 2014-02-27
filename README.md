@@ -195,6 +195,18 @@ There are a few points that merit your attention in these snippets:
 
   are not part of standard JavaScript but so-called 'host objects'.
 
+From https://wiki.openoffice.org/wiki/Uno:
+
+> Uno stands for Universal Network Objects.
+>
+> Uno is the interface based component model of http://OpenOffice.org. Uno offers interoperability between
+> programming languages, object models and hardware architectures, either in process or over process
+> boundaries, as well as in the intranet or the Internet. Uno components may be implemented in and
+> accessed from any programming language for which a Uno implementation (AKA language binding) and an
+> appropriate bridge or adapter exists.
+
+Sadly, a good number of pages were last updated around 2006 (≈ 8 yrs ago as of this writing); judging from
+relevant web offerings, the impression that active development of AOO has subsided is pervasive.
 
 #### Same Basic Samples
 
