@@ -1,4 +1,24 @@
 
+
+- [CoffeeLibre](#coffeelibre)
+	- [What?](#what)
+	- [Why?](#why)
+	- [How?](#how)
+		- [The Disappointing Hello World Example](#the-disappointing-hello-world-example)
+		- [Same Basic Samples](#same-basic-samples)
+			- [The Passive-Aggressive Treatment of Java in OOo](#the-passive-aggressive-treatment-of-java-in-ooo)
+		- [Bootstrapping](#bootstrapping)
+		- [Undo Transactions](#undo-transactions)
+		- [XXXXXXXXX](#xxxxxxxxx)
+		- [XXXXXXXXX](#xxxxxxxxx-1)
+- [Materials](#materials)
+	- [Cell Properties](#cell-properties)
+	- [The Global Object](#the-global-object)
+	- [Helpful Links](#helpful-links)
+
+> **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+
 ## CoffeeLibre
 
 
@@ -375,15 +395,6 @@ what's not to like about writing redundant XML?
 
 #### XXXXXXXXX
 
-![Accessing the OOo Macro Administration Facility (a)](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 15.48.58.png "Accessing the OOo Macro Administration Facility (a)")
-*Accessing the OOo Macro Administration Facility (a)*
-
-![Accessing the OOo Macro Administration Facility (b)](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.40.52.png "Accessing the OOo Macro Administration Facility (b)")
-*Accessing the OOo Macro Administration Facility (b)*
-
-![Assigning a keyboard shortcut to your macro](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.24.42.png "Assigning a keyboard shortcut to your macro")
-*Assigning a keyboard shortcut to your macro*
-
 While there is (on OSX) a folder `~/Library/Application Support/OpenOffice/4/user/Scripts` (which may
 or may not work for scripting as described here), i chose to use
 `/Applications/OpenOffice.app/Contents/share/Scripts/javascript` as location to link a folder that
@@ -412,7 +423,18 @@ in a terminal window to ensure all your changes in your CoffeeScript sources wil
 in the JavaScript transpilation targets (fortunately, OOo does not appear to cache macros, so its easy to
 always work with up-to-date sources).
 
-# Materials
+![Accessing the OOo Macro Administration Facility (a)](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 15.48.58.png "Accessing the OOo Macro Administration Facility (a)")
+*Accessing the OOo Macro Administration Facility (a)*
+
+![Accessing the OOo Macro Administration Facility (b)](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.40.52.png "Accessing the OOo Macro Administration Facility (b)")
+*Accessing the OOo Macro Administration Facility (b)*
+
+![Assigning a keyboard shortcut to your macro](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.24.42.png "Assigning a keyboard shortcut to your macro")
+*Assigning a keyboard shortcut to your macro*
+
+
+
+## Materials
 
 
 Scripting Libre(Open/Neo)Office with CoffeeScript
