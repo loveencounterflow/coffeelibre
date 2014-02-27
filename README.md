@@ -11,7 +11,7 @@
 		- [Bootstrapping](#bootstrapping)
 		- [Cell Formatting Macro](#cell-formatting-macro)
 		- [Undo Transactions](#undo-transactions)
-		- [The Myghtye Parcell De-Scriptor](#the-myghtye-parcell-de-scriptor)
+		- [𝔗𝔥𝔢 𝔐𝔶𝔤𝔥𝔱𝔶𝔢 𝔓𝔞𝔯𝔠𝔢𝔩𝔩 𝔇𝔢-𝔖𝔠𝔯𝔦𝔭𝔱𝔬𝔯](#𝔗𝔥𝔢-𝔐𝔶𝔤𝔥𝔱𝔶𝔢-𝔓𝔞𝔯𝔠𝔢𝔩𝔩-𝔇𝔢-𝔖𝔠𝔯𝔦𝔭𝔱𝔬𝔯)
 		- [Getting Your Macro Into Place](#getting-your-macro-into-place)
 	- [Materials](#materials)
 		- [Cell Properties](#cell-properties)
@@ -467,7 +467,7 @@ Undo transactions are simple to use with this setup; just write
 ````
 
 
-#### The Myghtye Parcell De-Scriptor
+#### 𝔗𝔥𝔢 𝔐𝔶𝔤𝔥𝔱𝔶𝔢 𝔓𝔞𝔯𝔠𝔢𝔩𝔩 𝔇𝔢-𝔖𝔠𝔯𝔦𝔭𝔱𝔬𝔯
 
 Each macro needs to have a `parcel-descriptor.xml` in its folder; you'll find one under
 `coffeelibre/lib/parcel-descriptor.xml` (since that is the folder we linked into the AOO scripts folder).
