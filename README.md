@@ -185,6 +185,7 @@ Intense use of search engines turned up various code snippets.*
 
 > By far the most comprehensive archive of OOo JavaScript macros i've found is at http://openoffice3.web.fc2.com;
 > although those pages are written in Japanese, they should still prove valuable for the neophyte.
+> There's a mirror of the website at https://github.com/loveencounterflow/OpenOffice-macros.
 
 I then set out to translate those snippets into CoffeeScript, isolate pertinent pieces of
 functionality, and organize them into functions with meaningful names. **It's really very much a matter of
