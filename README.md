@@ -29,9 +29,10 @@
 
 OpenOffice macros suffer from a number of problems:
 
-* they are hard to access and maintain from within the OpenOffice GUI;
-* writing macros with one of the several(!)* script editors provided by AOO is an unpleasant experience at best;
-* writing AOO macros in JavaScript is possible, but results in incredibly convoluted code.
+* they are **hard to access and maintain from within the OpenOffice GUI**;
+* **writing macros with one of the several(!)* script editors provided by AOO is an unpleasant experience
+  at best;**
+* writing AOO macros in **JavaScript is possible**, but results in **incredibly convoluted code**.
 
 > *) I have no idea what it is that makes application authors assume they will be capable of writing a
 > decent embedded code editor; maybe the thinking is that programs like Calc and Writer are 'inherently more
