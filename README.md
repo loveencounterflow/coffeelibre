@@ -402,6 +402,27 @@ As a more application-oriented example, here's the code i use to format cell con
   return null
 ````
 
+Sample code (most details left out; in fact, i'm using named styles instead of individual formats):
+
+````coffeescript
+@f = ( doc ) ->
+  sheet                           = CL.get_current_sheet doc
+  [ [ x0, y0, ], [ x1, y1, ], ]   = CL.get_current_selection doc
+  #.........................................................................................................
+  for y in [ y0 .. y1 ]
+    for x in [ x0 .. x1 ]
+      source_cell = CL.get_cell sheet, x, y
+      source_text = CL.get_cell_text source_cell
+      cid         = CHR.as_cid source_text, input: 'xncr'
+      chr_info    = CHR.analyze cid
+      fncr        = chr_info[ 'fncr' ]
+      rsg         = chr_info[ 'rsg' ]
+      fncr        = fncr.replace /^u-pua-/, 'jzr-fig-'
+      rsg         = rsg.replace  /^u-pua$/, 'jzr-fig'
+      is_cjk      = /^(u-cjk|jzr-fig|u-pua)/.test rsg
+      ...
+      @format_cell cell, 'font-name': font_name, 'font-size': 14
+````
 
 
 #### Undo Transactions
