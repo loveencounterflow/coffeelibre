@@ -9,6 +9,7 @@
 		- [Same Basic Samples](#same-basic-samples)
 		- [The Passive-Aggressive Treatment of Java in AOO](#the-passive-aggressive-treatment-of-java-in-aoo)
 		- [Bootstrapping](#bootstrapping)
+		- [Cell Formatting Macro](#cell-formatting-macro)
 		- [Undo Transactions](#undo-transactions)
 		- [XXXXXXXXX](#xxxxxxxxx)
 		- [XXXXXXXXX](#xxxxxxxxx-1)
@@ -356,6 +357,51 @@ methods, while `CHR`, `TEXT` and `TYPES` are copied without changes from
 [`coffeenode-types`](https://github.com/loveencounterflow/coffeenode-types), respectively (`TEXT` provides
 string manipulation routines; `CHR` is all about Unicode character codepoints, and `TYPES` gives us
 sane JS typechecking methods).
+
+
+#### Cell Formatting Macro
+
+As a more application-oriented example, here's the code i use to format cell contents:
+
+````coffeescript
+#-----------------------------------------------------------------------------------------------------------
+@format_cell = ( cell, options ) ->
+  pv = UnoRuntime.queryInterface XPropertySet, cell
+  # log options[ 'font-name' ]
+  #.........................................................................................................
+  if ( value = options[ 'cell-style-name' ] )?
+    pv.setPropertyValue 'CellStyle',          value
+  #.........................................................................................................
+  if ( value = options[ 'font-name' ] )?
+    pv.setPropertyValue 'CharFontName',       value
+    pv.setPropertyValue 'CharFontNameAsian',  value
+  #.........................................................................................................
+  if ( value = options[ 'font-size' ] )?
+    pv.setPropertyValue 'CharHeight',         value
+    pv.setPropertyValue 'CharHeightAsian',    value
+  #.........................................................................................................
+  if ( value = options[ 'background-color' ] )?
+    if value is 'transparent'
+      ### NB no need to wrap Booleans with new java.lang.Boolean ###
+      pv.setPropertyValue 'IsCellBackgroundTransparent', true
+    else
+      pv.setPropertyValue 'IsCellBackgroundTransparent', false
+      pv.setPropertyValue 'CellBackColor', new java.lang.Integer value
+  #.........................................................................................................
+  if ( value = options[ 'text-wrap' ] )?
+    pv.setPropertyValue 'IsTextWrapped', value
+  #.........................................................................................................
+  # BLOCK CENTER LEFT REPEAT RIGHT STANDARD
+  if ( value = options[ 'horizontal-align' ] )?
+    pv.setPropertyValue 'HoriJustify', value
+  #.........................................................................................................
+  # STANDARD TOP CENTER BOTTOM
+  if ( value = options[ 'vertical-align' ] )?
+    pv.setPropertyValue 'VertJustify', value
+  #.........................................................................................................
+  return null
+````
+
 
 
 #### Undo Transactions
