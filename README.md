@@ -220,11 +220,12 @@ of free-and-easy programmers quite often. So why not abstract the bejeezes out o
 
 ![very abstract](https://raw.github.com/loveencounterflow/coffeelibre/master/art/extreme-abstracting.jpg)
 
-> art by http://geek-and-poke.com/; see also http://abstractsingletonproxyfactorybean.com. At this point
+> art by http://geek-and-poke.com/.—At this point
 > in the program i always recommended to read up on Steve Yegge's classic,
 > [Execution in the Kingdom of Nouns](http://steve-yegge.blogspot.de/2006/03/execution-in-kingdom-of-nouns.html);
 > i can also heartily recommend to click through the file tree of
 > https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition
+> (courtesy http://abstractsingletonproxyfactorybean.com).
 
 Basically, `XSCRIPTCONTEXT.getDocument()` gives you an object that represents *something* in a hand-waving
 non-committal fashion, and *nothing in particular* at the same time. To get more specific, we still have to
