@@ -159,17 +159,16 @@ There are a few points that merit your attention in these snippets:
   are not part of standard JavaScript but so-called 'host objects'.
 
 
-#### XXXXXXXXX
+#### Same Basic Samples
 
-Still, i managed to get some sample code running, and intense use of search engines turned up various code
-snippets.*
+Intense use of search engines turned up various code snippets.*
 
 > By far the most comprehensive archive of OOo JavaScript macros i've found is at http://openoffice3.web.fc2.com;
 > although those pages are written in Japanese, they should still prove valuable for the neophyte.
 
 I then set out to translate those snippets into CoffeeScript, isolate pertinent pieces of
-functionality, and organize them into functions with meaningful names. It's really very much a matter of
-undoing the unholy mess that the OOo API is. I mean, consider this code that essentially just gives you
+functionality, and organize them into functions with meaningful names. **It's really very much a matter of
+undoing the unholy mess that the OOo API is.** I mean, consider this code that essentially just gives you
 an object that represents the current spreadsheet open in Calc:
 
 
@@ -221,7 +220,11 @@ of free-and-easy programmers quite often. So why not abstract the bejeezes out o
 
 ![very abstract](https://raw.github.com/loveencounterflow/coffeelibre/master/art/extreme-abstracting.jpg)
 
-> art by http://geek-and-poke.com/; see also http://abstractsingletonproxyfactorybean.com
+> art by http://geek-and-poke.com/; see also http://abstractsingletonproxyfactorybean.com. At this point
+> in the program i always recommended to read up on Steve Yegge's classic,
+> [Execution in the Kingdom of Nouns](http://steve-yegge.blogspot.de/2006/03/execution-in-kingdom-of-nouns.html);
+> i can also heartily recommend to click through the file tree of
+> https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition
 
 Basically, `XSCRIPTCONTEXT.getDocument()` gives you an object that represents *something* in a hand-waving
 non-committal fashion, and *nothing in particular* at the same time. To get more specific, we still have to
