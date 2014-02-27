@@ -460,6 +460,12 @@ manager supplier doc, get undo manager"**... seriously, though:
 > `self` in Python and a consequence of the Data-Centric, Library-Oriented programming methodology that i
 > tend to write all my stuff in.
 
+> **Caveat**: when you look carefully at the above code samples, you'll see that the last statement is not
+> quite true—there *are* calls where `doc` is not the first argument. This is because you're looking at
+> unfinished work in progress. In fact, many methods went through various stages of completeness, and the
+> codebase is, well, growing as it grows, and keeps changing. The API is not finished, only approximated;
+> pull requests welcome.
+
 Undo transactions are simple to use with this setup; just write
 
 ````coffeescript
