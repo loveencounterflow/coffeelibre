@@ -50,9 +50,9 @@ You can achieve to remedy all of the above—*to a certain degree*—by
 
 JavaScript macros for AOO are run inside the [Rhino VM](https://www.mozilla.org/rhino/). Now there's a
 slight chance this choice may be made an option: Not only is there [DynJS](http://dynjs.org/), "an
-ECMAScript runtime for the JVM", there's [Nodyn](http://nodyn.io/), too, which describes itself as  "a
+ECMAScript runtime for the JVM", there's [Nodyn](http://nodyn.io/), too, which describes itself as "a
 node.js compatible framework, running on the JVM powered by the DynJS Javascript runtime running under
-vert.x - the polyglot application platform and event bus". People who are crazy / stupid enough to think
+vert.x—the polyglot application platform and event bus". People who are crazy / stupid enough to think
 seriously about forking AOO / writing an office suite / a spreadsheet application / a **glorified
 multidimensional cellular automaton for numbers and texts that allows for alternative grid and graph layouts
 such as triangular and polar grids** (which is what i'd suggest to implement using
