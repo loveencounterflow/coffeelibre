@@ -62,15 +62,15 @@ look.
 
 ### Why?
 
-A while ago i had a fancy idea how to catalogue components of Chinese characters in a
-tree-like fashion; all i wanted was a software that would be more amenable to try out this idea than a pure
-text format (which i had tried). I figured that using Unicode box drawing characters as connectors should be
-good enough to visualize that tree, and that i could repurpose a spreadsheet—basically, a cellular
-automaton of sorts—to help me allocate spaces and characters in a suitable fashion.
+A while ago i had a fancy idea how to catalogue components of Chinese characters in a tree-like fashion; all
+i wanted was a software that would be more amenable to try out this idea than a pure text format (which i
+had tried). **I figured that using Unicode box drawing characters as connectors should be good enough to
+visualize that tree, and that i could repurpose a spreadsheet—basically, a cellular automaton of sorts—to
+help me allocate spaces and characters in a suitable fashion.**
 
-Unfortunately, there are not too many options when it comes to chosing a free and open spreadsheet solution.
-Online spreadsheet i've tried were often too clunky and restricted in their possibilities, and MS
-Excel—while arguably the champion in this field—is neither free nor open. This leaves you with having to
+**Unfortunately, there are not too many options when it comes to chosing a free and open spreadsheet
+solution.** Online spreadsheet i've tried were often too clunky and restricted in their possibilities, and
+MS Excel—while arguably the champion in this field—is neither free nor open. This leaves you with having to
 chose between one of the `/[a-z]+office\.org/` alternatives; more specifically,
 
 *   http://openoffice.org
