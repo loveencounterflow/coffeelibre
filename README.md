@@ -2,6 +2,7 @@
 
 - [CoffeeLibre](#coffeelibre)
 	- [What?](#what)
+	- [Breaking News (2014-02-27@11:58 CET)](#breaking-news-2014-02-27@1158-cet)
 	- [Why?](#why)
 	- [How?](#how)
 		- [The Disappointing Hello World Example](#the-disappointing-hello-world-example)
@@ -44,6 +45,18 @@ You can achieve to remedy all of the above—*to a certain degree*—by
 * authoring macros with your favorite text editor; and
 * wrapping up pieces of functionality—especially annoyingly long-winded AOO-API incantations—into
   libraries (for which [src/coffeelibre.coffee](src/coffeelibre.coffee) may serve as an example).
+
+### Breaking News (2014-02-27@11:58 CET)
+
+JavaScript macros for AOO are run inside the [Rhino VM](https://www.mozilla.org/rhino/)). Now there's a
+slight chance this choice may be made an option: Not only is there [DynJS](http://dynjs.org/), "an
+ECMAScript runtime for the JVM", there's [Nodyn](http://nodyn.io/), too, which describes itself as  "a
+node.js compatible framework, running on the JVM powered by the DynJS Javascript runtime running under
+vert.x - the polyglot application platform and event bus". People who are crazy / stupid enough to think
+seriously about forking AOO / writing an office suite / a spreadsheet application / a **glorified
+multidimensional cellular automaton for numbers and texts that allows for alternative grid and graph layouts
+such as triangular and polar grids** (which is what i'd suggest to implement using
+[node-webkit](https://github.com/rogerwang/node-webkit)) should definitely take a look.
 
 ### Why?
 
