@@ -52,7 +52,8 @@ You can achieve to remedy all of the above—*to a certain degree*—by
 
 JavaScript macros for AOO are run inside the [Rhino VM](https://www.mozilla.org/rhino/). Now there's a
 slight chance this choice may be made an option: Not only is there [DynJS](http://dynjs.org/), "an
-ECMAScript runtime for the JVM", there's [Nodyn](http://nodyn.io/), too, which describes itself as "a
+ECMAScript runtime for the JVM", there's [Nodyn](http://nodyn.io), too, (also check out
+[DailyJS](http://dailyjs.com/2014/02/27/nodyn)) which describes itself as "a
 node.js compatible framework, running on the JVM powered by the DynJS Javascript runtime running under
 vert.x—the polyglot application platform and event bus".
 
@@ -61,6 +62,13 @@ spreadsheet application / a **glorified multidimensional cellular automaton for 
 allows for alternative grid and graph layouts such as triangular and polar grids** (which is what i'd
 suggest to implement using [node-webkit](https://github.com/rogerwang/node-webkit)) should definitely take a
 look.
+
+> That the above proposal is no baloney is corroborated by the appearance of https://atom.io, a new
+> text editor built by GitHub, whose UI happens inside a web page rendered by Chrome. Be sure to visit
+> http://dailyjs.com/2014/02/28/atom and look for the YouTube link; the video does a good job at showing
+> what 'web-based desktop apps' really means in terms of 'extensible apps'. In sofar i believe that this
+> is the Next Big Thing, the AOO we're talking about here really looks like a dinosaur from millennia past.
+> Also see https://github.com/diki/tepe.
 
 ### Why?
 
@@ -473,7 +481,7 @@ Undo transactions are simple to use with this setup; just write
 ````
 
 
-#### 𝔗𝔥𝔢 𝔐𝔦𝔤𝔥𝔱𝔶 𝔓𝔞𝔯𝔠𝔢𝔩 𝔇𝔢𝔰𝔠𝔯𝔦𝔭𝔱𝔬𝔯
+#### The Mighty Parcel Descriptor
 
 Each macro needs to have a `parcel-descriptor.xml` in its folder; you'll find one under
 `coffeelibre/lib/parcel-descriptor.xml` (since that is the folder we linked into the AOO scripts folder).
@@ -539,6 +547,19 @@ always work with up-to-date sources).
 ![Assigning a keyboard shortcut to your macro](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.24.42.png "Assigning a keyboard shortcut to your macro")
 *Assigning a keyboard shortcut to your macro*
 
+### Running AOO from the Command Line
+
+On OSX:
+
+````bash
+/Applications/OpenOffice.app/Contents/MacOS/soffice route/to/document.ods
+````
+
+On Ubuntu:
+
+````bash
+soffice route/to/document.ods
+````
 
 
 ### Materials
