@@ -13,7 +13,7 @@
 		- [Undo Transactions](#undo-transactions)
 		- [The Mighty Parcel Descriptor](#the-mighty-parcel-descriptor)
 		- [Getting Your Macro Into Place](#getting-your-macro-into-place)
-	- [Running AOO from the Command Line](#running-aoo-from-the-command-line)
+		- [Running AOO from the Command Line](#running-aoo-from-the-command-line)
 	- [Materials](#materials)
 		- [Cell Properties](#cell-properties)
 		- [The Global Object](#the-global-object)
@@ -548,7 +548,7 @@ always work with up-to-date sources).
 ![Assigning a keyboard shortcut to your macro](https://raw.github.com/loveencounterflow/coffeelibre/master/art/Screen Shot 2014-02-26 at 16.24.42.png "Assigning a keyboard shortcut to your macro")
 *Assigning a keyboard shortcut to your macro*
 
-### Running AOO from the Command Line
+#### Running AOO from the Command Line
 
 On OSX:
 
