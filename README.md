@@ -585,7 +585,7 @@ LibreOffice on 11.10: it doesn't have JavaScript macros ability, and there's no 
 
 Instead, in order to
 
-* install OpenOffice: first remove LibreOffice as per http://askubuntu.com/a/116592/13669, the download and
+* install OpenOffice: first remove LibreOffice as per http://askubuntu.com/a/116592/13669, then download and
   install OpenOffice according to https://forum.openoffice.org/en/forum/viewtopic.php?f=74&t=68. Don't
   forget the last step (desktop integration); you'll have to `sudo dpkg -i *.deb` twice.
 
