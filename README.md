@@ -558,6 +558,10 @@ On OSX:
 /Applications/OpenOffice.app/Contents/MacOS/soffice route/to/document.ods
 ````
 
+#### Remarks for running AOO on Ubuntu
+
+**In theory:**
+
 On Ubuntu:
 
 ````bash
@@ -567,6 +571,31 @@ soffice route/to/document.ods
 > Note: this *may* run LibreOffice under Ubuntu. Also note the name of the executable, which dates back
 > to the 90s, when LibreOffice, before it was OpenOffice, was dubbed StarOffice, which is the successor
 > of StarWriter (published in 1985).
+
+**In practice:**
+
+So i tried to run this stuff under Ubuntu 11.10. I know this is 2014 and 11.10 is 'old', but then it's
+dubbed a 'Long-Term Support' version. Well, better not believe the hype.
+
+**Fact is that when you rely on Synaptic / Software Center / `apt`, you'll likely get outdated and
+incomplete versions of many programs**—examples from the last days when trying to set up CoffeeLibre on
+Ubuntu include NodeJS, TeXLive, and Libre/OpenOffice. **None of these applications can successfully installed
+in a decent, working, complete version using the system package manager**, so don't do that. As for LibreOffice
+on 11.10: it doesn't have JavaScript macros ability, and there's no package to fix that.
+
+Instead, in order to
+
+* install OpenOffice: first remove LibreOffice as per http://askubuntu.com/a/116592/13669, the download and
+  install OpenOffice according to https://forum.openoffice.org/en/forum/viewtopic.php?f=74&t=68. Don't
+  forget the last step (desktop integration); you'll have to `sudo dpkg -i *.deb` twice.
+
+* install NodeJS: do as described by https://www.digitalocean.com/community/articles/how-to-install-an-upstream-version-of-node-js-on-ubuntu-12-04;
+  this one worked for me where several other descriptions failed.
+
+* (for bonus, if you want TexLive, do as described on http://www.tug.org/texlive/acquire-netinstall.html
+  and https://www.tug.org/texlive/quickinstall.html).
+
+
 
 ### Materials
 
