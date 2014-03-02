@@ -550,6 +550,8 @@ always work with up-to-date sources).
 
 #### Running AOO from the Command Line
 
+During development, you will profit from starting AOO from the command line
+
 On OSX:
 
 ````bash
@@ -562,6 +564,9 @@ On Ubuntu:
 soffice route/to/document.ods
 ````
 
+> Note: this *may* run LibreOffice under Ubuntu. Also note the name of the executable, which dates back
+> to the 90s, when LibreOffice, before it was OpenOffice, was dubbed StarOffice, which is the successor
+> of StarWriter (published in 1985).
 
 ### Materials
 
