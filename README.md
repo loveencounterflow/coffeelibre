@@ -579,9 +579,9 @@ dubbed a 'Long-Term Support' version. Well, better not believe the hype.
 
 **Fact is that when you rely on Synaptic / Software Center / `apt`, you'll likely get outdated and
 incomplete versions of many programs**—examples from the last days when trying to set up CoffeeLibre on
-Ubuntu include NodeJS, TeXLive, and Libre/OpenOffice. **None of these applications can successfully installed
-in a decent, working, complete version using the system package manager**, so don't do that. As for LibreOffice
-on 11.10: it doesn't have JavaScript macros ability, and there's no package to fix that.
+Ubuntu include NodeJS, TeXLive, and Libre/OpenOffice. **None of these applications can be successfully
+installed in a decent, working, complete manner using the system package manager**, so don't do that. As for
+LibreOffice on 11.10: it doesn't have JavaScript macros ability, and there's no package to fix that.
 
 Instead, in order to
 
